@@ -18,7 +18,7 @@ else log = "<a href=logout.jsp>로그아웃</a>"; %>
 <table class="top" width="75%" align="center">
 	<tr>
 		<td>강의 조회</td>
-		<td>강의 수정</td>
+		<td><a href="course_update.jsp">강의 수정</a></td>
 		<td><a href="student_prof.jsp">수강신청학생 조회</a></td>
 		<td>지도학생 조회</td>
 		<td>공지사항</td>

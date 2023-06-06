@@ -21,8 +21,8 @@
 	<%
    String driver = "oracle.jdbc.driver.OracleDriver";
    String url = "jdbc:oracle:thin:@localhost:1521:xe";
-   String user = "kimminjoo";
-   String password = "1234";
+   String user = "leebk";
+   String password = "1124";
    Connection myConn = null;
    Statement stmt = null;
    PreparedStatement pstmt = null;

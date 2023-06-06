@@ -17,7 +17,7 @@ else log = "<a href=logout.jsp>로그아웃</a>"; %>
 <div class = "topButton">
 <table class="top" width="75%" align="center">
 	<tr>
-		<td><a href="all_course.jsp"  >전체과목 조회</a></td>
+		<td><a href="all_course.jsp">전체과목 조회</a></td>
 		<td><a href="insert.jsp">수강신청 입력</a></td>
 		<td><a href="delete.jsp">수강신청 조회</a></td>
 		<td><a href="select.jsp">장바구니</a></td>

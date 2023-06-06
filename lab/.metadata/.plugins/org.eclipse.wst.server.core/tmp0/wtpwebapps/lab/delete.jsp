@@ -26,7 +26,6 @@
 			<th>교수</th>
 			<th>수강인원</th>
 			<th>수강정원</th>
-			<th>수강취소</th>
 		</tr>
 		<%
 		Connection myConn = null;
