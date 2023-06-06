@@ -19,3 +19,13 @@
 - update_prof.jsp
 
 > 테스트 p_id = 57664
+
+<br>
+
+6/7 05:26 변경 파일
+- course_update.jsp
+- course_update_inside.jsp
+- course_update_verify.jsp
+- top_prof.jsp
+
+**course_update_verify.jsp에서 t_id만 null값**
