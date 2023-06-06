@@ -1,0 +1,6 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
+<% session.removeAttribute("session_id"); %>
+<script>
+alert("로그아웃 완료!!");
+response.sendRedirect("main.jsp");
+</script>

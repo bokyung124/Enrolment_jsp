@@ -1,0 +1,394 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'DOSIyagiMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSIyagiMedium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@800&display=swap');
+
+
+@font-face {
+	font-family: 'Noto Sans', sans-serif;
+	src: url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@800&display=swap');
+	
+    font-style: normal;
+}
+
+@font-face {
+     font-family: 'S-CoreDream-3Light';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+:root {
+	--black: #000000; 
+	--pink: #fb4175;
+	--lime: #23cd59;
+	/* --lime: #b2e43f; */
+	--green: #acd8a7;
+	--white: #ffffff;
+}
+.mainTitle {
+	color: var(--green);
+	font-family: 'S-CoreDream-3Light';
+	font-size: 350px; 
+	/* font-weight: 900; */
+	/* text-shadow: 4px 4px var(--pink); */
+	text-align: center;
+	height: 400px;
+	margin-top: 100px;
+	margin-bottom: 0;
+	
+}
+.clover {
+	font-size: 30px;
+	width: 30px;
+	position: fixed;
+	top: 30px;
+	left: 30px;
+}
+
+.title {
+	
+	font-family: 'S-CoreDream-3Light';
+}
+
+body {
+	/* background-color: var(--white); */
+	background-color: var(--white);
+	color: var(--black);
+	font-family: 'S-CoreDream-3Light';
+	text-align: center;
+	margin: 0;
+}
+
+/*메뉴바*/
+ .top{
+	border-collapse:collapse;
+	height: 40px;
+	font-family: 'SUITE-Regular';
+    text-decoration-line: none;
+	
+}
+/*
+a {
+	
+    text-decoration-line: none;
+    font-size: 10px;
+} */
+
+.user {
+	height: 40px;
+}
+.topButton {
+	background-color: var(--green);
+	height: 40px;
+	width: auto;
+	vertical-align: middle;
+	bottom-padding: 10px;
+	
+}
+
+.gameImage{
+	width:400px;
+	height: auto;
+	position:relative;
+	top:0px;
+}
+/*login.jsp*/
+.top2{
+	background-color: #99CCFF;
+	height: 35px;
+}
+
+/*신청, 삭제 a태그*/
+#Wcolor{
+	color:  var(--green);
+	font-size: 1.1rem;
+}
+
+/*출력 테이블 맨 윗줄에 넣고싶다*/
+#Bcolor{
+	background-color:#99CCFF;
+}
+table{
+	border-collapse:collapse;
+}
+table td{
+	text-align: center;
+	font-family:'S-CoreDream-3Light';
+	font-size: 16px;
+	height:17px;
+}
+
+p {
+	margin: 0;
+}
+
+/*top.jsp : 로그인 태그 때문에 페이지 내에서 a태그에 속성 적용*/
+a{
+color: var(--black);
+font-family: 'S-CoreDream-3Light';
+font-size: 16px;
+text-decoration: none;
+}
+a:hover{
+text-decoration: none;
+font-weight:bolder;
+}
+
+/*insert.jsp*/
+#semesterInfo{
+   text-align:center;
+   font-family: 'S-CoreDream-3Light';
+	font-size: 1.4rem;
+}
+
+/*delete.jsp*/
+#enrollS{
+   text-align:center;
+   font-family: 'S-CoreDream-3Light';
+	font-size: 1.5rem;
+}
+
+#CountInfo{
+   text-align:center;
+   font-family: 'S-CoreDream-3Light';
+	font-size: 1rem;
+}
+
+/*update.jsp*/
+.editable{
+   width:70%;
+   text-align:center;
+   font-family:S-CoreDream-3Light;
+	font-size: 1.2rem;
+}
+
+ /* 로그인창 */
+
+   
+  .loginDiv {
+	margin: 0;
+	background-color: var(--green);
+	box-sizing: border-box;
+	font-family: 'S-CoreDream-3Light';
+	/* border-radius: 5px; */
+  }
+   
+  .login-form {
+	  width: 300px;
+	  background-color: #EEEFF1;
+	  margin-right: auto;
+	  margin-left: auto;
+	  margin-top: 50px;
+	  padding: 20px;
+	  text-align: center;
+	  border: none;
+	  
+  }
+   
+  .text-field {
+	font-family: 'S-CoreDream-3Light';
+		font-size: 14px;
+		padding: 10px;
+		border: none;
+		width: 260px;
+		margin-bottom: 10px;
+   
+  }
+   
+  .submit-btn {
+	font-family: 'S-CoreDream-3Light';
+	font-size: 14px;
+	border: none;
+	padding: 10px;
+	width: 280px;
+	background-color: var(--green);
+		margin-bottom: 10px;
+   
+	color: white;
+  }
+  .back-btn {
+	font-family: 'S-CoreDream-3Light';
+	font-size: 14px;
+	border: none;
+	padding: 10px;
+	width: 280px;
+	background-color: var(--green);
+   
+	color: white;
+  }
+   
+  .links {
+	  text-align: center;
+  }
+   
+  .links a {
+	font-size: 12px;
+	color: #9B9B9B;
+  }
+  
+
+.main {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+ .main h1 {
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 65px;
+
+ }
+
+ .cursor {
+	z-index: 999;
+	position: fixed;
+	background: #2696E8;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	pointer-events: none;
+	box-shadow: 0 0 20px #2696E8,
+	0 0 60px #2696E8,
+	0 0 100px #2696E8;
+	animation: colors 5s infinite;
+	transform: translate(-50%, -50%);
+	display: none;
+ }
+
+ @keyframes colors {
+	0% {
+		filter: hue-rotate(0deg);
+	}
+	100% {
+		filter: hue-rotate(360deg);
+	}
+ }
+.cursor:before {
+	content: "";
+	position: absolute;
+	background-color: #2696E8;
+	width: 50px;
+	height: 50px;
+	opacity: 0.2;
+	transform: translate(-30%, -30%);
+	border-radius: 50%;
+}
+
+
+
+
+
+.menu_btn {
+	background-color: var(--green);
+	border-width: 20px;
+	padding:  5px 20px;
+	margin: 10px;
+	
+}
+
+
+
+/* 마이페이지 */
+.mypage-table {
+    border-collapse: collapse;
+    background-color: var(--white);
+    font-size: 14px;
+    /* font-size: 0.9em; */
+    font-family: sans-serif;
+    min-width: 400px;
+}
+
+.mypage-table th,
+.mypage-table td {
+	background-color: var(--white);
+	border: 20px solid #EEEFF1;
+	padding: 10px 0;
+}
+
+
+.mypage-table tbody tr {
+    background-color: var(--white);
+    padding: 30px 0;
+}
+
+.mypage-table tbody tr:last-of-type {
+    background-color: var(--green);
+}
+ 
+.mypage-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.myPage-textField {
+	
+	width: 300px;
+	  
+	  text-align: center;
+	  border: none;
+}
+
+.myPage-textField input::placeholder {
+  color: red;
+  font-style: italic;
+  font-size: 14px;
+}
+.myPage-textField input:active { 
+	color: white; 
+background-color: blue; 
+}
+
+  .update-btn {
+	font-family: 'S-CoreDream-3Light';
+	font-size: 14px;
+	border: None;
+	padding: 10px 10px;
+	width: 80px;
+	background-color: var(--white);
+		margin-bottom: 10px;
+  }
+
+
+.deleteTable {
+	border-color: white;
+	padding:20 20 20 20;
+}
+
+.deleteTable thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.deleteTable tbody tr {
+    background-color: var(--white);
+    padding: 30px 0;
+}
+.deleteTable tbody {
+	
+}
+.deleteTable tbody tr:nth-of-type(even) {
+    background-color: #e8f5e6;
+}
+

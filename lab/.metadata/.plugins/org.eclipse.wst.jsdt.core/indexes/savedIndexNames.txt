@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+/Users/bokyung/Desktop/DBP/lab/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+3678101787.index
+1021070252.index
+1636070816.index
+1478396548.index
+1478396548.index
+1199704226.index
+3702949226.index
+4027737672.index
