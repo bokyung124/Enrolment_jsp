@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>수강신청 사용자 정보 수정</title>
 </head>
-<body>
+<body class = "loginDiv">
 	<%@ include file="user.jsp"%>
 	<%@ include file="top.jsp"%>
 	<br>

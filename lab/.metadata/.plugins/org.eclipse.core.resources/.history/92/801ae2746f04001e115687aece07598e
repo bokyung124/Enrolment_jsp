@@ -381,12 +381,6 @@ font-weight:bolder;
 	border-color: white;
 }
 
-.deleteTable th,
-.deleteTable td {
-	/* border: 20px solid #EEEFF1; */
-	padding: 10px 0;
-}
-
 .deleteTable thead tr {
     background-color: #009879;
     color: #ffffff;

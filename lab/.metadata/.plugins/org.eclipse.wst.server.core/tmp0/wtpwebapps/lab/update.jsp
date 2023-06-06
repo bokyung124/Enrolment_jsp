@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>수강신청 사용자 정보 수정</title>
 </head>
-<body class = "loginDiv">
+<body>
 	<%@ include file="user.jsp"%>
 	<%@ include file="top.jsp"%>
 	<br>
@@ -18,7 +18,7 @@
 	<br>
 	<br>
 	<br>
-	<table width="70%" align="center" bgcolor='#EEEFF1'  border>
+	<table width="70%" align="center" class="mypage-table"  border>
 		<form method="post" action="update_verify.jsp">
 			<tr height='50px'>
 				<td><div>
