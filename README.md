@@ -7,3 +7,5 @@
 - delete.jsp
 - style.css
 - top.jsp
+
+> 테스트 s_id = 2212346
