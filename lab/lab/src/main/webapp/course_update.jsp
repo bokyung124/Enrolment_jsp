@@ -103,7 +103,7 @@
 			Integer ttime = rs.getInt("t_time");
 			String tloc = rs.getString("t_loc");
 			Integer tmax = rs.getInt("t_max");
-			
+		
 		%>
 	
 		<tr>
@@ -117,12 +117,12 @@
 			<td><a id="Wcolor"
 				href="course_update_inside.jsp?t_id=<%=tid%>">
 					수정 </a></td>
-			<td>
+			<%-- <td>
 				<input type="hidden" name="teachId" value=<%=tid%>>
 				<input type="hidden" name="teachLoc" value=<%=tloc%>>
 				<input type="hidden" name="teachTime" value=<%=ttime%>>
 				<input type="hidden" name="teachMax" value=<%=tmax%>>
-			</td>
+			</td> --%>
 			
 			
 <%-- 			<td><div>
@@ -149,23 +149,23 @@
 					</td>
 		</tr>
 		 --%>
-<%-- 		<script>
-			document.getElementsByName("tid")[0].innerHTML = '<%=tid%>';
+		<script>
+			document.getElementsByName("tid")[0].value = '<%=tid%>';
 			document.getElementsByName("cid")[0].innerHTML = '<%=cid%>';
 			document.getElementsByName("cidno")[0].innerHTML = '<%=cidno%>';
 			document.getElementsByName("cname")[0].innerHTML = '<%=cname%>';
 		    document.getElementsByName("teachTime")[0].value = '<%=ttime%>';
 		    document.getElementsByName("teachLoc")[0].value = "<%=tloc%>";
 		    document.getElementsByName("teachMax")[0].value = "<%=tmax%>";
-		</script> --%>
+		</script> 
 		
 		</tr>
 		</form>
-		<%
+ 		<%
 	}
 			
 	
-		%>
+		%> 
 		
 	</table>
 	

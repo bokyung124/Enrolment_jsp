@@ -26,6 +26,7 @@
 			<th>교수</th>
 			<th>수강인원</th>
 			<th>수강정원</th>
+			<th>수강취소</th>
 		</tr>
 		<%
 		Connection myConn = null;
@@ -68,7 +69,7 @@
 			%>
 			<script>document.getElementById('enrollS').innerHTML = "<%=nYear%>년  <%=nSemester%>학기";</script>
 			<%
-			System.out.println(nYear+"/"+nSemester);
+			
 		} catch (SQLException ex) {
 			System.err.println("SQLException: " + ex.getMessage());
 		}

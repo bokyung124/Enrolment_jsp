@@ -32,7 +32,7 @@ try{
 	String userLoc = request.getParameter("userLoc");
 	String userPhone = request.getParameter("userPhone");
 
-	String mySQL = "update professor set p_pwd = '" + userPassword + "', p_loc = '" + userLoc + ", p_phone = '" + userPhone + "' where p_id = '" + session_id + "'";
+	String mySQL = "update professor set p_pwd = '" + userPassword + "', p_loc = '" + userLoc + "', p_phone = '" + userPhone + "' where p_id = '" + session_id + "'";
 
 	try{
 		/* cstmt.execute(); */

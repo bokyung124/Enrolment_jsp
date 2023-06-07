@@ -10,11 +10,13 @@ create table student (
     CONSTRAINT stu_pk PRIMARY KEY (s_id)
 );
 
-insert into student values ('2012345', '김소미', 3, '컴퓨터과학전공', 'a1245', 'som45@sm.ac.kr', '010-2837-2993', '서울시 강서구');
-insert into student values ('2212346', '이서연', 2, '소프트웨어융합전공', 'asdo37', 'seoseo@sm.ac.kr', '010-2111-2020', '서울시 강북구');
-insert into student values ('2112347', '박수진', 3, '데이터사이언스전공', 'hihihi', 'jjin11@sm.ac.kr', '010-0999-2823', '서울시 강남구');
-insert into student values ('2012348', '정채영', 4, '컴퓨터과학전공', 'jung01', 'youngirl@sm.ac.kr', '010-1234-4833', '서울시 강동구');
+insert into student values ('2012345', '김소미', 3, '소프트웨어학부', 'a1245', 'som45@sm.ac.kr', '010-2837-2993', '서울시 강서구');
+insert into student values ('2212346', '이서연', 2, '소프트웨어학부', 'asdo37', 'seoseo@sm.ac.kr', '010-2111-2020', '서울시 강북구');
+insert into student values ('2112347', '박수진', 3, '소프트웨어학부', 'hihihi', 'jjin11@sm.ac.kr', '010-0999-2823', '서울시 강남구');
+insert into student values ('2012348', '정채영', 4, '소프트웨어학부', 'jung01', 'youngirl@sm.ac.kr', '010-1234-4833', '서울시 강동구');
 insert into student values ('2012001', '유미래', 1, '기초공학부', 'miraeya', 'future00@sm.ac.kr', '010-1324-5325', '서울시 종로구');
+
+-- update student set s_major = '소프트웨어학부' where s_major='컴퓨터과학전공' or s_major = '소프트웨어융합전공' or s_major='데이터사이언스전공';
 
 create table professor (
     p_id    varchar2(10) NOT NULL,
@@ -53,19 +55,19 @@ create table course (
     CONSTRAINT cs_pk PRIMARY KEY (c_id, c_id_no)
 );
 
-insert into course values ('102934', 001, '데이터베이스프로그래밍', 3, '컴퓨터과학전공', 3);
-insert into course values ('102229', 002, '데이터마이닝및분석', 3, '소프트웨어융합전공', 3);
+insert into course values ('102934', 001, '데이터베이스프로그래밍', 3, '소프트웨어학부', 3);
+insert into course values ('102229', 002, '데이터마이닝및분석', 3, '소프트웨어학부', 3);
 insert into course values ('102119', 001, '빅데이터통계분석', 3, '통계학과', 4);
 insert into course values ('101098', 001, '프로그래밍입문', 3, '기초공학부', 1);
-insert into course values ('110294', 001, '데이터사이언스개론', 3, '소프트웨어융합전공', 2);
-insert into course values ('103917', 001, '소프트웨어의이해', 3, '컴퓨터과학전공', 1);
-insert into course values ('100542', 001, '운영체제', 3, '컴퓨터과학전공', 3);
-insert into course values ('100542', 002, '운영체제', 3, '컴퓨터과학전공', 3);
-insert into course values ('100542', 003, '운영체제', 3, '컴퓨터과학전공', 3);
-insert into course values ('100550', 001, '인공지능', 3, '컴퓨터과학전공', 4);
-insert into course values ('100540', 001, '자료구조', 3, '컴퓨터과학전공', 3);
-insert into course values ('101715', 001, '컴파일러', 3, '컴퓨터과학전공', 4);
-insert into course values ('100545', 001, '프로그래밍언어론', 3, '컴퓨터과학전공', 3);
+insert into course values ('110294', 001, '데이터사이언스개론', 3, '소프트웨어학부', 2);
+insert into course values ('103917', 001, '소프트웨어의이해', 3, '소프트웨어학부', 1);
+insert into course values ('100542', 001, '운영체제', 3, '소프트웨어학부', 3);
+insert into course values ('100542', 002, '운영체제', 3, '소프트웨어학부', 3);
+insert into course values ('100542', 003, '운영체제', 3, '소프트웨어학부', 3);
+insert into course values ('100550', 001, '인공지능', 3, '소프트웨어학부', 4);
+insert into course values ('100540', 001, '자료구조', 3, '소프트웨어학부', 3);
+insert into course values ('101715', 001, '컴파일러', 3, '소프트웨어학부', 4);
+insert into course values ('100545', 001, '프로그래밍언어론', 3, '소프트웨어학부', 3);
 insert into course values ('101058', 001, '경영과학1', 3, '경영학부', 2);
 insert into course values ('101107', 001, '국제재무관리', 3, '경영학부', 4);
 insert into course values ('101056', 001, '마케팅원론', 2, '경영학부', 3);
@@ -74,6 +76,8 @@ insert into course values ('101055', 002, '회계원리', 1, '경영학부', 3);
 insert into course values ('101055', 003, '회계원리', 1, '경영학부', 3);
 insert into course values ('101055', 004, '회계원리', 1, '경영학부', 3);
 insert into course values ('101055', 005, '회계원리', 1, '경영학부', 3);
+
+-- update course set c_major = '소프트웨어학부' where c_major='컴퓨터과학전공' or c_major = '소프트웨어융합전공' or c_major='데이터사이언스전공';
 
 
 
@@ -171,6 +175,8 @@ insert into enroll values ('026', 23, 2, '2212346', '101107', 001, '016');
 insert into enroll values ('027', 23, 2, '2212346', '101055', 001, '011');
 insert into enroll values ('028', 23, 2, '2212346', '100542', 001, '006');
 insert into enroll values ('029', 23, 2, '2012345', '100542', 001, '006');
+insert into enroll values ('030', 23, 2, '2012348', '100540', 001, '007');
+insert into enroll values ('031', 23, 2, '2012345', '100540', 001, '007');
 --
 insert into enroll values ('001', 23, 1, '2012345', '102934', 001, '001');
 insert into enroll values ('002', 23, 1, '2212346', '102229', 002, '002');

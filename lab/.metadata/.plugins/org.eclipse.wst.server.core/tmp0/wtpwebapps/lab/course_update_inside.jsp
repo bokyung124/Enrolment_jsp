@@ -126,14 +126,19 @@
                                                                                                                                                                                                                    
 	<br>
 	<br>
-	
-	
+
 	
 	<%
+	session_id = (String)session.getAttribute("user");
+	String t_id = request.getParameter("tid");
+	String c_name = request.getParameter("cname");
 	
- 	mySQL = "select t.t_id, c.c_id, c.c_id_no, c.c_name, t.t_time, t.t_loc, t.t_max, t.p_id from teach t, course c where p_id = '" 
- 			+ session_id 
- 			+ "' and t.c_id = c.c_id and t.c_id_no = c.c_id_no and t_year = ? and t_semester = ?";
+	System.out.println("now: " + t_id);
+
+ 	mySQL = "select t.t_id, c.c_id, c.c_id_no, c.c_name, t.t_time, t.t_loc, t.t_max, t.p_id from teach t, course c where t.t_id = '" 
+ 			+ t_id 
+ 			+ "' and t.p_id ='"
+ 			+ session_id + "' and t.c_id = c.c_id and t.c_id_no = c.c_id_no and t_year = ? and t_semester = ?";
 	
 	
 	pstmt = Conn.prepareStatement(mySQL);
@@ -143,7 +148,7 @@
   	
 	
 	while (rset.next()) {
-		String t_id = rset.getString("t_id");
+		String tid = rset.getString("t_id");
 		String cid = rset.getString("c_id");
 		int cidno = rset.getInt("c_id_no");
 		String cname = rset.getString("c_name");
