@@ -101,13 +101,17 @@
 				String c_name = crs.getString("c_name");
 				%>
 				<option value=<%=c_name%>><%=c_name%></option>
-			<td>
+				
+				<script>
+					t_id = document.getElementByName('course')[course.selectedIndex].value;
+				</script>
+	<%-- 		<td>
 					<input type="hidden" name="t_id" value=<%=tid%>>
-				</td>
+				</td> --%>
 		</select>
 		<% } %>
 		
-		<%-- <tr><input type="submit" value="조회" href=student_prof_table.jsp?t_id=<%=t_id %>"></tr>			 --%>
+		<tr><input type="submit" value="조회" href=student_prof_table.jsp?t_id=<%=t_id %>"></tr>
 		<%
 		
 		} catch (SQLException se) {

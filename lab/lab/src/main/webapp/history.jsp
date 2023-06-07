@@ -36,6 +36,8 @@
 		PreparedStatement pstmt = null;
 		int nYear = 0;
 		int nSemester = 0;
+		int year = 0;
+		int semester = 0; 
 
 		String dbdriver = "oracle.jdbc.OracleDriver";
 		String dburl = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -72,11 +74,49 @@
 	
 		<br>
 		<br>
+		
+		<script>
+			function ChangeValue() {
+				int yearIndex = document.getElementsById("year").options.selectedIndex;
+				int year = document.getElementsById("year").options[yearIndex].value;
+				int semesterIndex = document.getElementsById('semester').options.selectedIndex;
+				int semester = document.getElementsById('semester').options[semesterIndex].value;
+			}
+		</script>
+		
 
+		<form method="post" action="history_table.jsp">
+		<tr>
+			<select id="year" style="font-size:20px; width:50px;" onchange="ChangeValue]()">
+				<option name="year" value=23 selected>23</option>
+				<option name="year" value=22>22</option>
+				<option name="year" value=21>21</option>
+			</select> &nbsp;
+			학년도
+		</tr>
+			&nbsp;&nbsp;
+		<tr>
+			<select id="semester" style="font-size:20px; width:50px;" onchange="ChangeValueSem()">
+				<option name="semester" value="1">1</option>
+				<option name="semester" value="2" selected>2</option>
+			</select> &nbsp;
+			학기
+		</tr>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		
+		<%System.out.println("year: "+year); %>
+		
+		</form>
+		<button type="submit" onclick="ChangeValue(); location.href='history_table.jsp" style="font-size:14px;">검색</button>
 
-	<%
+		<br>
+		<br>
+		<br>
 
-		mySQL = "select e.c_id, c.c_name, e.e_year, e.e_semester, h.h_score FROM history h, course c, enroll e where h.e_id = e.e_id and e.c_id = c.c_id and e.c_id_no = c.c_id_no and s_id = '"
+		<%
+		
+		mySQL = "select e.c_id, c.c_name, e.e_year, e.e_semester, h.h_score FROM history h, course c, enroll e"
+				+ " where h.e_id = e.e_id and e.c_id = c.c_id and e.c_id_no = c.c_id_no and s_id = '"
 				+ session_id + "'";
 
 		myResultSet = stmt.executeQuery(mySQL);
@@ -98,8 +138,7 @@
 				cstmt.execute();
 				totalnum = cstmt.getInt(2);
 				totalnum2 = cstmt.getInt(3);
-		%>
-		<%
+
 		} catch (SQLException ex) {
 		System.err.println("SQLException: " + ex.getMessage());
 		}
