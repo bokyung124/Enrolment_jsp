@@ -29,3 +29,11 @@
 - top_prof.jsp
 
 **course_update_verify.jsp에서 t_id만 null값**
+
+<br>
+
+6/8
+- student_prof.jsp 분반 2개인데 한 개만 나옴
+- t_id 저장되어 있는걸로 나옴..
+- history.jsp 년도 학기 추가해야함
+- 교수 강의 수정 안됨
