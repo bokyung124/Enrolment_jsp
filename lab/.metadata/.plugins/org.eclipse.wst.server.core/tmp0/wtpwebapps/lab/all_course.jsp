@@ -10,71 +10,136 @@ int nTotalUnit = 0;
 <title>수강신청 조회</title>
 </head>
 <body>
-    <%@ include file="top.jsp"%>
     <%@ include file="user.jsp"%>
+    <%@ include file="top.jsp"%>
     <%
     
     if (session_id == null || session_id.isEmpty()) { // session_id가 null이거나 비어있을 경우 로그인 페이지로 리다이렉트
         response.sendRedirect("login.jsp");
     } else {
       
-        
-        // 데이터베이스 연결 정보
-        String driver = "oracle.jdbc.driver.OracleDriver";
+         
+         
+        String dbdriver = "oracle.jdbc.driver.OracleDriver";
         String url = "jdbc:oracle:thin:@localhost:1521:xe";
-        String username = "leebk"; // 데이터베이스 사용자 이름에 맞게 변경해야 합니다.
-        String password = "1124"; // 데이터베이스 비밀번호에 맞게 변경해야 합니다.
+        String user = "leebk"; 
+        String passwd = "1124"; 
         
         try {
-            Class.forName(driver);
-            Connection connection = DriverManager.getConnection(url, username, password);
+            Class.forName(dbdriver);
+            Connection connection = DriverManager.getConnection(url, user, passwd);
             Statement statement = connection.createStatement();
             
-            String query = "SELECT c_id, c_id_no, c_name, t_semester, t_time, t_loc, is_repeat "
-                    + "FROM course "
-                    + "JOIN teach ON course.c_id = teach.c_id AND course.c_id_no = teach.c_id_no "
-                    + "JOIN enroll ON course.c_id = enroll.c_id AND course.c_id_no = enroll.c_id_no "
-                    + "WHERE enroll.s_id = '" + session_id + "'";
+            CallableStatement cstmt = connection.prepareCall("{? = call Date2EnrollYear(SYSDATE)}"); //stored function 이용
+            cstmt.registerOutParameter(1, java.sql.Types.INTEGER);
+            CallableStatement cstmt2 = connection.prepareCall("{? = call Date2EnrollSemester(SYSDATE)}");
+            cstmt2.registerOutParameter(1, java.sql.Types.INTEGER);
+            
+            cstmt.execute();
+            cstmt2.execute();
+            int nYear = cstmt.getInt(1);
+            int nSemester = cstmt2.getInt(1);
+            String _param = request.getParameter("searchText");
+            String _param2 = request.getParameter("searchMajor");
+            
+         
+            String query =
+                  "SELECT c.c_id, c.c_id_no, c.c_name, c_major, t.t_semester, t.t_time, t.t_loc, p.p_name "
+                    + "FROM course c  "
+                    + "JOIN teach t ON c.c_id = t.c_id JOIN professor p ON t.p_id = p.p_id AND c.c_id_no = t.c_id_no WHERE t.t_year = " + nYear%100 + " AND t.t_semester = " + nSemester ;
+            if ( _param != null) {
+               query += " AND c.c_name LIKE '%" + _param + "%'";
+            }
+            else if ( _param2 != null) {
+                query += " AND c.c_major LIKE '%" + _param2 + "%'";
+             }
+            System.out.println("query : " + query);
+                    /* + "JOIN enroll ON course.c_id = enroll.c_id AND course.c_id_no = enroll.c_id_no " */
+                    /* + "WHERE enroll.s_id = '" + session_id + "'"; */
             ResultSet resultSet = statement.executeQuery(query);
             
             %>
             <br>
             <br>
             <br>
-            <table width="70%" align="center" border>
+           
+            <table align="center">
+            <td> 과목명 </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+            <td>
+            
+            <form action="./all_course.jsp" >
+            <div id="SearchField">
+            <td><input type="text" class="form-control" placeholder="과목명 입력" name="searchText" maxlength="30"></td>
+            <td><button type="submit"  id="search" class = "searchButton">검색</button></td> 
+            
+            </div>
+         	</form>
+         	</td>
+			
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td> 전공 </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			
+    		<td>
+            <form action="./all_course.jsp">
+            <div id="SearchMajor">
+            <td><input type="text" class="form-control" placeholder="전공명 입력" name="searchMajor" maxlength="30"></td>
+            <td><button type="submit"  id="search" class = "searchButton">검색</button></td> 
+  
+          
+	        </div>
+	        </form>
+         </td>
+         </table>
+   
+            <table width="70%" align="center" border class = "deleteTable">
                 <br>
                 <tr>
                     <th>과목번호</th>
                     <th>분반</th>
                     <th>과목명</th>
-                   
+                  	<th>전공</th>
+                    <th>교수</th>
                     <th>학기</th>
-                    <th>요일</th>
                     <th>시간</th>
+                    <th>장소</th>
                 </tr>
             <%   
             while (resultSet.next()) {
                 String c_id = resultSet.getString("c_id");
                 int c_id_no = resultSet.getInt("c_id_no");
                 String c_name = resultSet.getString("c_name");
-             
+                String p_name = resultSet.getString("p_name");
+             	String c_major = resultSet.getString("c_major");
                 int t_semester = resultSet.getInt("t_semester");
                 String t_time = resultSet.getString("t_time");
                 String t_loc = resultSet.getString("t_loc");
                 
                 %>
-                <tr>
+                <tr class="class_search">
                     <td><%=c_id%></td>
                     <td><%=c_id_no%></td>
                     <td><%=c_name%></td>
-                    
+                    <td><%=c_major%></td>
+                    <td><%=p_name%></td>
                     <td><%=t_semester%></td>
                     <td><%=t_time%></td>
                     <td><%=t_loc%></td>
                 </tr>
                 <%
-                nTotalCourse++;
-                nTotalUnit += 3; // 가정: 모든 과목은 3학점
+                /* nTotalCourse++;
+                nTotalUnit += 3; // 가정: 모든 과목은 3학점 */
             }
             
             resultSet.close();
@@ -87,9 +152,10 @@ int nTotalUnit = 0;
     }
     %>
     
-    <div id="CountInfo" align="center" style="font-weight: bold;">
-        수강신청한 강의 수 : <%=nTotalCourse%>개 &nbsp;&nbsp;&nbsp; 누적 학점 수 : <%=nTotalUnit%>학점
-    </div>
+    <!-- 필요없는 것 같아서 우선 뺐어용 -->
+ <%--    <div id="CountInfo" align="center" style="font-weight: bold;" >
+        이번학기 총 강의 수 : <%=nTotalCourse%>개 &nbsp;&nbsp;&nbsp; 누적 학점 수 : <%=nTotalUnit%>학점
+    </div> --%>
     
 </table>
 </body>

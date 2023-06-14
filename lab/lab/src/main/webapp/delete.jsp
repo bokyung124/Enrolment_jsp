@@ -44,6 +44,9 @@
 		PreparedStatement pstmt2 = null;
 		int nEnrollStudent = 0;
 		
+		int totalnum = 0;
+		int totalnum2 = 0;
+		
 		String mySQL = "";
 		String nSQL = "";
 		String dburl = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -144,6 +147,20 @@
 		cstmt3.execute();
 		nTotalUnit = cstmt3.getInt(4);
 		nTotalCourse = cstmt3.getInt(5);
+		
+		CallableStatement cstmt4 = myConn.prepareCall("{call MajorCount(?,?,?)}");
+		cstmt4.setString(1, session_id);
+		cstmt4.registerOutParameter(2, java.sql.Types.INTEGER);
+		cstmt4.registerOutParameter(3, java.sql.Types.INTEGER);
+
+		try {
+		cstmt4.execute();
+		totalnum = cstmt4.getInt(2);
+		totalnum2 = cstmt4.getInt(3);
+
+} catch (SQLException ex) {
+System.err.println("SQLException: " + ex.getMessage());
+}
 
 } 
 } 
@@ -156,7 +173,9 @@ stmt.close(); myConn.close();
     <br>
 
 	<div id="CountInfo" align="center" style="font-weight: bold;">
-        수강신청한 강의 수 : <%=nTotalCourse%>개 &nbsp;&nbsp;&nbsp; 누적 학점 수 : <%=nTotalUnit%>학점 / 18학점
+        수강신청한 강의 수 : <%=nTotalCourse%>개 &nbsp;&nbsp;&nbsp; 
+        <br><br> 누적 학점 수 : <%=nTotalUnit%>학점 / 18학점 
+        &nbsp;&nbsp; [전공 <%=totalnum%>학점 &nbsp;+&nbsp; 교양 <%=totalnum2%>학점]
     </div>
     
     <br>

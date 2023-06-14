@@ -20,7 +20,7 @@ else log = "<a href=logout.jsp>로그아웃</a>"; %>
 		<td><a href="all_course.jsp">전체과목 조회</a></td>
 		<td><a href="insert.jsp">수강신청 입력</a></td>
 		<td><a href="delete.jsp">수강신청 조회</a></td>
-		<td><a href="select.jsp">장바구니</a></td>
+		<td><a href="cart.jsp">장바구니</a></td>
 		<td><a href="history.jsp">개별수강 이력</a></td>
 	</tr>
 </table>

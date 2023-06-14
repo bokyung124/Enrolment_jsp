@@ -38,6 +38,13 @@
      font-style: normal;
 }
 
+@font-face {
+    font-family: 'KBO-Dia-Gothic_bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
 :root {
 	--black: #000000; 
 	--pink: #fb4175;
@@ -48,9 +55,9 @@
 }
 .mainTitle {
 	color: var(--green);
-	font-family: 'S-CoreDream-3Light';
+	font-family: 'KBO-Dia-Gothic_bold';
 	font-size: 350px; 
-	/* font-weight: 900; */
+	font-weight: 900;
 	/* text-shadow: 4px 4px var(--pink); */
 	text-align: center;
 	height: 400px;
@@ -68,7 +75,7 @@
 
 .title {
 	
-	font-family: 'S-CoreDream-3Light';
+	font-family: 'KBO-Dia-Gothic_bold';
 }
 
 body {
@@ -162,12 +169,6 @@ font-weight:bolder;
 	font-size: 1.4rem;
 }
 
-/*delete.jsp*/
-#enrollS{
-   text-align:center;
-   font-family: 'S-CoreDream-3Light';
-	font-size: 1.5rem;
-}
 
 #CountInfo{
    text-align:center;
@@ -419,3 +420,21 @@ font-weight:bolder;
     background-color: #e8f5e6;
 }
 
+.cartHeart a.link {
+	color: var(--black);
+}
+.cartHeart a.visited {
+	color: var(--green);
+}
+
+.searchButton {
+	border: none;
+	background-color: var(--green);
+}
+
+/*delete.jsp*/
+#enrollS{
+   text-align:center;
+   font-family: 'S-CoreDream-3Light';
+	font-size: 1.5rem;
+}

@@ -13,19 +13,8 @@
 	if (session_id == null)
 		response.sendRedirect("login.jsp");
 	%>
-	<br>
-	<br>
-	<br>
-	<table width="70%" align="center" class = "deleteTable" border>
-		<br>
-		<tr>
-			<th>수업번호</th>
-			<th>과목명</th>
-			<th>학년도</th>
-			<th>학기</th>
-			<th>학점</th>
-		</tr>
-		<%
+
+	<%
 		Connection myConn = null;
 		Statement stmt = null;
 		ResultSet myResultSet = null;
@@ -38,6 +27,9 @@
 		int nSemester = 0;
 		int year = 0;
 		int semester = 0; 
+		
+		String _param = request.getParameter("searchYear");
+        String _param2 = request.getParameter("searchSem");
 
 		String dbdriver = "oracle.jdbc.OracleDriver";
 		String dburl = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -59,65 +51,78 @@
 			cstmt2.execute();
 			nSemester = cstmt2.getInt(1);
 			%>
-			<script>document.getElementById('enrollS').innerHTML = "<%=nYear%>년  <%=nSemester%>학기";</script>
-			<%
+	<script>document.getElementById('enrollS').innerHTML = "<%=nYear%>년  <%=nSemester%>학기";</script>
+	<%
 		} catch (SQLException ex) {
 			System.err.println("SQLException: " + ex.getMessage());
 		}
 		
 		%>
+	<br>
+	<br>
+	<br>
+	<div>
+		<input type="text" id="enrollS" align="center"
+			style="font-weight: bold;" value="<%= nYear %>년 <%= nSemester %>학기"
+			readonly></input>
+	</div>
+	<br>
+	<br>
 
-		<div>
-			<input type="text" id="enrollS" align="center" style="font-weight: bold;"
-				value="<%= nYear %>년 <%= nSemester %>학기" readonly></input>
+	<table align="center">
+		<br>
+		<td></td>
+		<td>학년도</td>
+		<td></td>
+		<td></td>
+		<td></td>
+
+		<form action="./history.jsp">
+			<div id="SearchField">
+		<td><input type="text" class="form-control"
+			placeholder="학년도 (yy)" name="searchYear" maxlength="30"></td>
+
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>학기</td>
+		<td></td>
+		<td></td>
+		<td></td>
+
+		<td><input type="text" class="form-control" placeholder="학기 (s)"
+			name="searchSem" maxlength="30"></td>
+		<td><button type="submit" id="search" class="searchButton">검색</button></td>
 		</div>
-	
-		<br>
-		<br>
-		
-		<script>
-			function ChangeValue() {
-				int yearIndex = document.getElementsById("year").options.selectedIndex;
-				int year = document.getElementsById("year").options[yearIndex].value;
-				int semesterIndex = document.getElementsById('semester').options.selectedIndex;
-				int semester = document.getElementsById('semester').options[semesterIndex].value;
-			}
-		</script>
-		
-
-		<form method="post" action="history_table.jsp">
-		<tr>
-			<select id="year" style="font-size:20px; width:50px;" onchange="ChangeValue]()">
-				<option name="year" value=23 selected>23</option>
-				<option name="year" value=22>22</option>
-				<option name="year" value=21>21</option>
-			</select> &nbsp;
-			학년도
-		</tr>
-			&nbsp;&nbsp;
-		<tr>
-			<select id="semester" style="font-size:20px; width:50px;" onchange="ChangeValueSem()">
-				<option name="semester" value="1">1</option>
-				<option name="semester" value="2" selected>2</option>
-			</select> &nbsp;
-			학기
-		</tr>
-		&nbsp;&nbsp;&nbsp;&nbsp;
-		
-		<%System.out.println("year: "+year); %>
-		
 		</form>
-		<button type="submit" onclick="ChangeValue(); location.href='history_table.jsp" style="font-size:14px;">검색</button>
 
+	</table>
+
+	<table width="70%" align="center" class="deleteTable" border>
 		<br>
-		<br>
-		<br>
+		<tr>
+			<th>수업번호</th>
+			<th>과목명</th>
+			<th>학년도</th>
+			<th>학기</th>
+			<th>학점</th>
+		</tr>
+
+
 
 		<%
 		
 		mySQL = "select e.c_id, c.c_name, e.e_year, e.e_semester, h.h_score FROM history h, course c, enroll e"
 				+ " where h.e_id = e.e_id and e.c_id = c.c_id and e.c_id_no = c.c_id_no and s_id = '"
 				+ session_id + "'";
+		if ( _param != null) {
+            mySQL += " AND e.e_year LIKE '%" + _param + "%'";
+         }
+        else if ( _param2 != null) {
+             mySQL += " AND e.e_semester LIKE '%" + _param2 + "%'";
+          }
 
 		myResultSet = stmt.executeQuery(mySQL);
 
@@ -161,12 +166,13 @@
 	<br>
 	<br>
 
-<div id="CountInfo" align="center" style="font-weight: bold;">
-		총 이수 학점 <br><br> 전공 :
-		<%=totalnum%>학점 &nbsp;&nbsp; /  &nbsp;&nbsp; 교양 :
+	<div id="CountInfo" align="center" style="font-weight: bold;">
+		총 이수 학점 :
+		<%=totalnum+totalnum2%>학점<br> <br> 전공 :
+		<%=totalnum%>학점 &nbsp;&nbsp; / &nbsp;&nbsp; 교양 :
 		<%=totalnum2%>학점 &nbsp;&nbsp;&nbsp;
 	</div>
-	
+
 </body>
 </html>
 
