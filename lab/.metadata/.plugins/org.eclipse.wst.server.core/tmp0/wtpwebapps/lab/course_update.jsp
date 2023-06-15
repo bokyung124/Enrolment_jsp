@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
@@ -55,7 +55,7 @@
 		         }catch(SQLException e){System.err.println("SQLException: " + e.getMessage());}
 		   }
 	%>
-	
+
 	<br>
 	<br>
 
@@ -66,7 +66,7 @@
 
 	<br>
 	<br>
-	
+
 	<%
 	
  	mySQL = "select t.t_id, c.c_id, c.c_id_no, c.c_name, t.t_time, t.t_loc, t.t_max, t.p_id from teach t, course c where p_id = '" 
@@ -79,21 +79,21 @@
 	pstmt.setInt(2, nSemester);
   	rs = pstmt.executeQuery();
 	%>
-	
-	<table width="70%" align="center" class = "deleteTable" border>
-	 <form method="post" action="course_update_inside.jsp"> 
-		<br>
-		<tr>
-			<th>수업번호</th>
-			<th>과목번호</th>
-			<th>분반</th>
-			<th>과목명</th>
-			<th>교시</th>
-			<th>장소</th>
-			<th>수강정원</th>
-			<th>수정</th>
-		</tr>
-		<%
+
+	<table width="70%" align="center" class="deleteTable" border>
+		<form method="get" action="course_update_inside.jsp">
+			<br>
+			<tr>
+				<th>수업번호</th>
+				<th>과목번호</th>
+				<th>분반</th>
+				<th>과목명</th>
+				<th>교시</th>
+				<th>장소</th>
+				<th>수강정원</th>
+				<th>수정</th>
+			</tr>
+			<%
 		
 		while (rs.next()) {
 			String tid = rs.getString("t_id");
@@ -105,51 +105,23 @@
 			Integer tmax = rs.getInt("t_max");
 		
 		%>
-	
-		<tr>
-			<td><%=tid%></td>
-			<td><%=cid%></td>
-			<td><%=cidno%></td>
-			<td><%=cname%></td>
-			<td><%=ttime%></td>
-			<td><%=tloc%></td>
-			<td><%=tmax%></td>
-			<td><a id="Wcolor"
-				href="course_update_inside.jsp?t_id=<%=tid%>">
-					수정 </a></td>
-			<%-- <td>
-				<input type="hidden" name="teachId" value=<%=tid%>>
-				<input type="hidden" name="teachLoc" value=<%=tloc%>>
-				<input type="hidden" name="teachTime" value=<%=ttime%>>
-				<input type="hidden" name="teachMax" value=<%=tmax%>>
-			</td> --%>
-			
-			
-<%-- 			<td><div>
-					<%=cid%>
-					</div></td>
-			<td><div>
-					<%=cidno%>
-					</div></td>
-			<td padding="10 10 10 10px;"><%=cname%></td>
-			<td>
-				<div>
-					<input type="text" name="teachTime" class="c_editable">
-					</div>
-					</td>
-			<td>
-				<div>
-					<input type="text" name="teachLoc" class="c_editable">
-					</div>
-					</td>
-			<td>
-				<div>
-					<input type="text" name="teachMax" class="c_editable">
-					</div>
-					</td>
-		</tr>
-		 --%>
-		<script>
+
+			<tr>
+				<td><%=tid%></td>
+				<td><%=cid%></td>
+				<td><%=cidno%></td>
+				<td><%=cname%></td>
+				<td><%=ttime%></td>
+				<td><%=tloc%></td>
+				<td><%=tmax%></td>
+				<td><a id="Wcolor"
+					href="course_update_inside.jsp?tid=<%=tid%>"> 수정 </a></td>
+					
+				<script>
+				document.getElementsByName("tid")[0].value = '<%=tid%>';
+				</script>
+
+				<%-- <script>
 			document.getElementsByName("tid")[0].value = '<%=tid%>';
 			document.getElementsByName("cid")[0].innerHTML = '<%=cid%>';
 			document.getElementsByName("cidno")[0].innerHTML = '<%=cidno%>';
@@ -157,18 +129,18 @@
 		    document.getElementsByName("teachTime")[0].value = '<%=ttime%>';
 		    document.getElementsByName("teachLoc")[0].value = "<%=tloc%>";
 		    document.getElementsByName("teachMax")[0].value = "<%=tmax%>";
-		</script> 
-		
-		</tr>
+		</script> --%>
+
+			</tr>
 		</form>
- 		<%
+		<%
 	}
 			
 	
-		%> 
-		
+		%>
+
 	</table>
-	
-	
+
+
 </body>
 </html>

@@ -14,12 +14,12 @@
 	<br>
 	<table width="70%" align="center" class="mypage-table" border>
 		<form method="post" action="course_update_verify.jsp">
-			<tr height='50px'>
+		<!-- 	<tr height='50px'>
 				<td><div>
 						<b>수업번호</b>
 					</div></td>
 				<td><div name="tid"></div></td> 
-			</tr>
+			</tr> -->
 			<tr height='50px'>
 				<td><div>
 						<b>과목번호</b>
@@ -133,9 +133,9 @@
 	String t_id = request.getParameter("tid");
 	String c_name = request.getParameter("cname");
 	
-	System.out.println("now: " + t_id);
+	System.out.println("now: " + t_id + " sid: " + session_id);
 
- 	mySQL = "select t.t_id, c.c_id, c.c_id_no, c.c_name, t.t_time, t.t_loc, t.t_max, t.p_id from teach t, course c where t.t_id = '" 
+ 	mySQL = "select c.c_id, c.c_id_no, c.c_name, t.t_time, t.t_loc, t.t_max, t.p_id from teach t, course c where t.t_id = '" 
  			+ t_id 
  			+ "' and t.p_id ='"
  			+ session_id + "' and t.c_id = c.c_id and t.c_id_no = c.c_id_no and t_year = ? and t_semester = ?";
@@ -148,7 +148,7 @@
   	
 	
 	while (rset.next()) {
-		String tid = rset.getString("t_id");
+		/* String tid = rset.getString("t_id"); */
 		String cid = rset.getString("c_id");
 		int cidno = rset.getInt("c_id_no");
 		String cname = rset.getString("c_name");
@@ -159,7 +159,7 @@
 		
 	%>
 		<script>
-			document.getElementsByName("tid")[0].innerHTML = '<%=t_id%>';
+			<%-- document.getElementsByName("tid")[0].value = '<%=tid%>';  --%>
 			document.getElementsByName("cid")[0].innerHTML = '<%=cid%>';
 			document.getElementsByName("cidno")[0].innerHTML = '<%=cidno%>';
 			document.getElementsByName("cname")[0].innerHTML = '<%=cname%>';
@@ -168,14 +168,14 @@
 		    document.getElementsByName("teachMax")[0].value = "<%=tmax%>";
 		</script>
 		
-		<form method="post" action="course_update_verify.jsp">
+		<%-- <form method="post" action="course_update_verify.jsp">
 			<td>
 				<input type="hidden" name="teachId" value=<%=t_id%>>
 				<input type="hidden" name="teachLoc" value=<%=tloc%>>
 				<input type="hidden" name="teachTime" value=<%=ttime%>>
 				<input type="hidden" name="teachMax" value=<%=tmax%>>
 			</td>
-		</form>
+		</form> --%>
 		
 		<%-- <form method="post" action="course_update_verify.jsp">
 			<tr>
