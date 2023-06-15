@@ -21,7 +21,7 @@ IS
 	and e.c_id_no = c.c_id_no and e.s_id = sStudentId;
 
 BEGIN
-	totalnum := 0;
+	totalnum  := 0;
 	totalnum2 := 0;
 	
 	select s_major

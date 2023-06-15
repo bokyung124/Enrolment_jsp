@@ -201,25 +201,28 @@ insert into enroll values ('018', 22, 1, '2012348', '100540', 001, '025');
 
 create table history (
 	e_id    varchar2(10) NOT NULL,
+	s_id 	varchar2(10) NOT NULL,
 	h_score varchar2(10),
 	CONSTRAINT history_pk  PRIMARY KEY (e_id),
-	CONSTRAINT history_fk  FOREIGN KEY (e_id) REFERENCES enroll (e_id)
+	CONSTRAINT history_fk  FOREIGN KEY (e_id) REFERENCES enroll (e_id),
+	CONSTRAINT history_fk2  FOREIGN KEY (s_id) REFERENCES student (s_id)
 );
 
-insert into history values ('005', 'A+');
-insert into history values ('006', 'A+');
-insert into history values ('007', 'A+');
-insert into history values ('008', 'A+');
-insert into history values ('009', 'A+');
-insert into history values ('010', 'A+');
-insert into history values ('011', 'A+');
-insert into history values ('012', 'A+');
-insert into history values ('013', 'A+');
-insert into history values ('014', 'A+');
-insert into history values ('015', 'A+');
-insert into history values ('016', 'A+');
-insert into history values ('017', 'A+');
-insert into history values ('018', 'A+');
+insert into history values ('005', '2012345', 'A+');
+insert into history values ('006', '2012345', 'A+');
+insert into history values ('007', '2012345', 'A+');
+insert into history values ('008', '2012345', 'A+');
+insert into history values ('009', '2212346', 'A+');
+insert into history values ('010', '2212346', 'A+');
+insert into history values ('011', '2212346', 'A+');
+insert into history values ('012', '2112347', 'A+');
+insert into history values ('013', '2112347', 'A+');
+insert into history values ('014', '2112347', 'A+');
+insert into history values ('015', '2012348', 'A+');
+insert into history values ('016', '2012348', 'A+');
+insert into history values ('017', '2012348', 'A+');
+insert into history values ('018', '2012348', 'A+');
+
 
 create table heart (
 	s_id	varchar2(10),
