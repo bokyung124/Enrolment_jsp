@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
@@ -11,61 +11,65 @@
 <body>
 	<%@ include file="user.jsp"%>
 	<%@ include file="top_prof.jsp"%>
+	
+	<%
+	session_id = (String)session.getAttribute("user");
+	String tid = request.getParameter("tid"); 
+	String c_name = request.getParameter("cname");
+	%>
+	
 	<br>
 	<table width="70%" align="center" class="mypage-table" border>
 		<form method="post" action="course_update_verify.jsp">
-		<!-- 	<tr height='50px'>
-				<td><div>
-						<b>수업번호</b>
-					</div></td>
-				<td><div name="tid"></div></td> 
-			</tr> -->
 			<tr height='50px'>
-				<td><div>
-						<b>과목번호</b>
-					</div></td>
-				<td><div name="cid"></div></td>
+				<input type="hidden" name="tid" value="<%=tid%>">
 			</tr>
-			<tr height='50px'>
-				<td><div>
-						<b>분반</b>
-					</div></td>
-				<td><div name="cidno"></div></td>
-			</tr>
-			<tr height='50px'>
-				<td><div>
-						<b>과목명</b>
-					</div></td>
-				<td><div name="cname"></div></td>
-			</tr>
-			
-			<tr height='50px'>
-				<td><div>
-						<b>교시</b>
-					</div></td>
-				<td><div>
-						<input type="text" name="teachTime" class="editable">
-					</div></td>
-			</tr>
+		<tr height='50px'>
+			<td><div>
+					<b>과목번호</b>
+				</div></td>
+			<td><div name="cid"></div></td>
+		</tr>
+		<tr height='50px'>
+			<td><div>
+					<b>분반</b>
+				</div></td>
+			<td><div name="cidno"></div></td>
+		</tr>
+		<tr height='50px'>
+			<td><div>
+					<b>과목명</b>
+				</div></td>
+			<td><div name="cname"></div></td>
+		</tr>
 
-			<tr height='50px'>
-				<td><div>
-						<b>장소</b>
-					</div></td>
-				<td><div>
-						<input type="text" name="teachLoc" class="editable">
-					</div></td>
-			</tr>
-			<tr height='50px'>
-				<td><div>
-						<b>수강정원</b>
-					</div></td>
-				<td><div>
-						<input type="text" name="teachMax" class="editable">
-					</div></td>
+		<tr height='50px'>
+			<td><div>
+					<b>교시</b>
+				</div></td>
+			<td><div>
+					<input type="text" name="teachTime" class="editable">
+				</div></td>
+		</tr>
 
-			<tr height='20px' >
-				<td colspan=2><div align="center">
+		<tr height='50px'>
+			<td><div>
+					<b>장소</b>
+				</div></td>
+			<td><div>
+					<input type="text" name="teachLoc" class="editable">
+				</div></td>
+		</tr>
+		<tr height='50px'>
+			<td><div>
+					<b>수강정원</b>
+				</div></td>
+			<td><div>
+					<input type="text" name="teachMax" class="editable">
+				</div></td>
+
+			<tr height='20px'>
+			<td colspan=2><div align="center">
 						<input type="SUBMIT" name="Submit" value="수정">
 					</div></td>
 			</tr>
@@ -103,7 +107,7 @@
 		nSemester = cstmt2.getInt(1);
 		%>
 	<script>document.getElementById('semesterInfo').innerHTML = "<%=nYear%>년  <%=nSemester%>학기";</script>
-	<%
+			<%
 	} catch (SQLException ex) {
 		System.err.println("SQLException: " + ex.getMessage());
 	} catch (ClassNotFoundException ex) {
@@ -114,32 +118,24 @@
 		         }catch(SQLException e){System.err.println("SQLException: " + e.getMessage());}
 		   }
 	%>
-	
-	<br>
-	<br>
 
-	<div>
-		<input type="text" id="semesterInfo"
-			value="<%= nYear %>년 <%= nSemester %>학기" readonly></input>
-	</div>
-	
-                                                                                                                                                                                                                   
-	<br>
-	<br>
+			<br>
+			<br>
 
-	
-	<%
-	session_id = (String)session.getAttribute("user");
-	String t_id = request.getParameter("tid");
-	String c_name = request.getParameter("cname");
-	
-	System.out.println("now: " + t_id + " sid: " + session_id);
+			<div>
+				<input type="text" id="semesterInfo"
+					value="<%= nYear %>년 <%= nSemester %>학기" readonly></input>
+			</div>
 
+			<br>
+			<br>
+
+			<%
  	mySQL = "select c.c_id, c.c_id_no, c.c_name, t.t_time, t.t_loc, t.t_max, t.p_id from teach t, course c where t.t_id = '" 
- 			+ t_id 
+ 			+ tid 
  			+ "' and t.p_id ='"
  			+ session_id + "' and t.c_id = c.c_id and t.c_id_no = c.c_id_no and t_year = ? and t_semester = ?";
-	
+	System.out.println("include: " + tid);
 	
 	pstmt = Conn.prepareStatement(mySQL);
 	pstmt.setInt(1, nYear);
@@ -148,18 +144,16 @@
   	
 	
 	while (rset.next()) {
-		/* String tid = rset.getString("t_id"); */
 		String cid = rset.getString("c_id");
 		int cidno = rset.getInt("c_id_no");
 		String cname = rset.getString("c_name");
 		int ttime = rset.getInt("t_time");
 		String tloc = rset.getString("t_loc");
 		int tmax = rset.getInt("t_max");
-		
-		
+
 	%>
-		<script>
-			<%-- document.getElementsByName("tid")[0].value = '<%=tid%>';  --%>
+			<script>
+			document.getElementsByName("tid")[0].value = '<%=tid%>';
 			document.getElementsByName("cid")[0].innerHTML = '<%=cid%>';
 			document.getElementsByName("cidno")[0].innerHTML = '<%=cidno%>';
 			document.getElementsByName("cname")[0].innerHTML = '<%=cname%>';
@@ -167,30 +161,10 @@
 		    document.getElementsByName("teachLoc")[0].value = "<%=tloc%>";
 		    document.getElementsByName("teachMax")[0].value = "<%=tmax%>";
 		</script>
-		
-		<%-- <form method="post" action="course_update_verify.jsp">
-			<td>
-				<input type="hidden" name="teachId" value=<%=t_id%>>
-				<input type="hidden" name="teachLoc" value=<%=tloc%>>
-				<input type="hidden" name="teachTime" value=<%=ttime%>>
-				<input type="hidden" name="teachMax" value=<%=tmax%>>
-			</td>
-		</form> --%>
-		
-		<%-- <form method="post" action="course_update_verify.jsp">
-			<tr>
-				<td>
-					<input type="hidden" name="tid" value="<%=tid%>">
-				</td>
-			</tr>
-		</form> --%>
-		<%
-	
-	
-	
+			<%
 	} %>
 		
-
-		</table>
+		
+	</table>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
@@ -8,6 +8,8 @@
 <title>강의 정보 수정</title>
 </head>
 <body>
+
+
 	<%
 	request.setCharacterEncoding("utf-8");
 	String driver = "oracle.jdbc.driver.OracleDriver";
@@ -31,15 +33,16 @@ try{
 
  	String session_id = (String)session.getAttribute("user"); 
  	
-	String tid = request.getParameter("teachId");
+	String tid = request.getParameter("tid");
 	int teachTime = Integer.parseInt(request.getParameter("teachTime"));
 	String teachLoc = request.getParameter("teachLoc");
 	int teachMax = Integer.parseInt(request.getParameter("teachMax"));
+	
+	System.out.println("verify: " + tid);
 
 	String mySQL = "update teach set t_time = " + teachTime + ", t_loc = '" + teachLoc + "', t_max = " + teachMax 
 					+ " where t_id = '" + tid + "'";
 	
-	System.out.println(tid);
 	System.out.println(teachMax);
 
 	try{
@@ -47,9 +50,9 @@ try{
 		System.out.println("연결완료");
 		/* cstmt.execute(); */
 	    stmt.executeUpdate(mySQL); %>
-	    <script>alert('수정 완료');</script>
-	   <% myConn.commit();%>
-		<script>location.href = 'course_update.jsp';</script>
+	<script>alert('수정 완료');</script>
+	<% myConn.commit();%>
+	<script>location.href = 'course_update.jsp';</script>
 	<%}catch(SQLException ex){
 		String sMessage;
 		/* if(ex.getErrorCode() == 20006)   sMessage = "암호는 4자리 이상이어야 합니다";
