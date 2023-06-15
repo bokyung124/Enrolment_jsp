@@ -30,3 +30,17 @@
 0:0:0:0:0:0:0:1 - - [16/Jun/2023:01:18:50 +0900] "GET /lab/main.jsp HTTP/1.1" 200 1659
 0:0:0:0:0:0:0:1 - - [16/Jun/2023:01:18:51 +0900] "GET /lab/style.css HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [16/Jun/2023:01:18:51 +0900] "GET /lab/cart.jsp HTTP/1.1" 200 24627
+0:0:0:0:0:0:0:1 - - [16/Jun/2023:02:22:27 +0900] "GET /lab/logout.jsp HTTP/1.1" 200 78
+0:0:0:0:0:0:0:1 - - [16/Jun/2023:02:22:28 +0900] "GET /lab/main.jsp HTTP/1.1" 200 1573
+0:0:0:0:0:0:0:1 - - [16/Jun/2023:02:22:28 +0900] "GET /lab/style.css?after HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [16/Jun/2023:02:22:29 +0900] "GET /lab/login.jsp HTTP/1.1" 200 642
+0:0:0:0:0:0:0:1 - - [16/Jun/2023:02:23:02 +0900] "POST /lab/login_verify.jsp HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [16/Jun/2023:02:23:02 +0900] "GET /lab/main.jsp HTTP/1.1" 200 1586
+0:0:0:0:0:0:0:1 - - [16/Jun/2023:02:23:04 +0900] "GET /lab/student_prof.jsp HTTP/1.1" 200 2184
+0:0:0:0:0:0:0:1 - - [16/Jun/2023:02:23:07 +0900] "GET /lab/student_prof_table.jsp?tid=006&cname=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C HTTP/1.1" 200 1548
+0:0:0:0:0:0:0:1 - - [16/Jun/2023:02:23:22 +0900] "GET /lab/student_prof_table.jsp?tid=006&cname=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C HTTP/1.1" 200 1548
+0:0:0:0:0:0:0:1 - - [16/Jun/2023:02:23:24 +0900] "GET /lab/student_prof.jsp HTTP/1.1" 200 2184
+0:0:0:0:0:0:0:1 - - [16/Jun/2023:02:23:25 +0900] "GET /lab/student_prof_table.jsp?tid=007&cname=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C HTTP/1.1" 200 1877
+0:0:0:0:0:0:0:1 - - [16/Jun/2023:02:25:23 +0900] "GET /lab/student_prof.jsp HTTP/1.1" 500 2416
+0:0:0:0:0:0:0:1 - - [16/Jun/2023:02:25:31 +0900] "GET /lab/student_prof.jsp HTTP/1.1" 200 2184
+0:0:0:0:0:0:0:1 - - [16/Jun/2023:02:25:38 +0900] "GET /lab/student_prof_table.jsp?tid=007&cname=%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C HTTP/1.1" 200 1877

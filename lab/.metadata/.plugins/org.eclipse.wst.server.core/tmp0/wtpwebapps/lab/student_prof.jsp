@@ -16,6 +16,7 @@
 	Connection myConn = null;
 	Statement stmt = null;
 	ResultSet rs = null;
+	ResultSet enrollSet = null;
 	
 	String mySQL = "";
 	PreparedStatement pstmt = null;
@@ -97,7 +98,7 @@
 				<th>장소</th>
 				<th>수강인원</th>
 				<th>수강정원</th>
-				<th>수정</th>
+				<th>조회</th>
 			</tr>
 			<%
 		
@@ -109,6 +110,18 @@
 			Integer ttime = rs.getInt("t_time");
 			String tloc = rs.getString("t_loc");
 			Integer tmax = rs.getInt("t_max");
+			
+			String nSQL = "select COUNT(*) cnt from enroll where t_id = '" + tid + "' and e_year = ? and e_semester = ?";
+			pstmt2 = myConn.prepareStatement(nSQL);
+			pstmt2.setInt(1, nYear);
+			pstmt2.setInt(2, nSemester);
+			enrollSet = pstmt2.executeQuery();
+			
+			if (enrollSet != null) {
+				while (enrollSet.next()) {
+					nEnrollStudent = enrollSet.getInt("cnt");
+				}
+			}
 		%>
 
 			<tr>

@@ -111,7 +111,7 @@
 			String tloc = rs.getString("t_loc");
 			Integer tmax = rs.getInt("t_max");
 			
-			String nSQL = "select COUNT(*) cnt from enroll where t_id = '" + tid + "' and e_year = ? and e_semester = ?";
+			String nSQL = "select COUNT(*) cnt from enroll where t_id = '" + t_id + "' and e_year = ? and e_semester = ?";
 			pstmt2 = myConn.prepareStatement(nSQL);
 			pstmt2.setInt(1, nYear);
 			pstmt2.setInt(2, nSemester);
