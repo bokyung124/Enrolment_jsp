@@ -47,38 +47,5 @@
 			cursor.style.display = "none";
 		});
 		</script>
-
-	<%-- 	
-	<table width="75%" align="center" height="100%">
-		<%if (session_id != null) {%>
-		
-		<tr>
-			<td><br>
-			<br>
-			<br>
-			<br>
-
-			<br>
-			<br>
-			<br>
-			<br>
-			<b><%=session_id%>님 방문을 환영합니다.</b></td>
-		</tr>
-		<%
-		} else {
-		%>
-		<tr>
-			<td><br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<b class = "title"><%=log%></b></td>
-		</tr>
-		<% } %>
-	</table> --%>
 </body>
 </html>

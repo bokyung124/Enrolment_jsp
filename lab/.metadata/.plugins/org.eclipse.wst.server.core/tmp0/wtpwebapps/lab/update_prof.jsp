@@ -104,7 +104,7 @@
 		      document.getElementsByName("userMajor")[0].innerHTML = "<%=major%>";
 		      document.getElementsByName("userPhone")[0].value = '<%=phone%>';
 		      document.getElementsByName("userLoc")[0].value = '<%=loc%>';
-		     </script>
+		</script>
 		<%}
    else{
    }

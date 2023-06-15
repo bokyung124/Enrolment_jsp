@@ -31,15 +31,14 @@
 	cstmt.setString(1, s_id);
 	cstmt.setString(2, c_id);
 	cstmt.setInt(3, c_id_no);
-	System.out.println("gogogo");
 	cstmt.registerOutParameter(4, java.sql.Types.VARCHAR);
 	try {
 		cstmt.execute();
 		result = cstmt.getString(4);
-		System.out.println("🎁🎁🎁🎁🎁🎁🎁"+result + s_id +"\n" + c_id +"\n"+  c_id_no );
 	%>
 	<script>
-		alert('<%=result%>');
+		alert('<%=result%>
+		');
 		location.href = "insert.jsp";
 	</script>
 

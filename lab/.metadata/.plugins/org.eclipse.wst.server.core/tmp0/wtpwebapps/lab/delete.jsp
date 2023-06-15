@@ -7,7 +7,7 @@
 <title>수강신청 삭제</title>
 </head>
 <body>
-<%@include file="user.jsp"%>
+	<%@include file="user.jsp"%>
 	<%@ include file="top.jsp"%>
 	<%
 	if (session_id == null)
@@ -16,7 +16,7 @@
 	<br>
 	<br>
 	<br>
-	<table width="70%" align="center" class = "deleteTable" border >
+	<table width="70%" align="center" class="deleteTable" border>
 		<br>
 		<tr>
 			<th>과목번호</th>
@@ -70,8 +70,8 @@
 			cstmt2.execute();
 			nSemester = cstmt2.getInt(1);
 			%>
-			<script>document.getElementById('enrollS').innerHTML = "<%=nYear%>년  <%=nSemester%>학기";</script>
-			<%
+		<script>document.getElementById('enrollS').innerHTML = "<%=nYear%>년  <%=nSemester%>학기";</script>
+		<%
 			
 		} catch (SQLException ex) {
 			System.err.println("SQLException: " + ex.getMessage());
@@ -80,15 +80,16 @@
 		%>
 
 		<div>
-			<input type="text" id="enrollS" align="center" style="font-weight: bold;"
-				value="<%= nYear %>년 <%= nSemester %>학기" readonly></input>
+			<input type="text" id="enrollS" align="center"
+				style="font-weight: bold;" value="<%= nYear %>년 <%= nSemester %>학기"
+				readonly></input>
 		</div>
-	
+
 		<br>
 		<br>
 
 
-	<%
+		<%
 		mySQL = "select distinct e.t_id, c.c_id, c.c_id_no, c.c_name, t.t_time, t.t_max, p.p_name from enroll e, course c, teach t, professor p where e.s_id='"
 				+ session_id
 				+ "' and e.t_id = t.t_id and t.c_id = c.c_id and t.c_id_no = c.c_id_no and t.p_id = p.p_id and e.e_year = ? and e.e_semester = ? ";
@@ -130,8 +131,7 @@
 			<td><%=p_name%></td>
 			<td><%=nEnrollStudent%></td>
 			<td><%=t_max%></td>
-			<td><a id="Wcolor"
-				href="delete_verify.jsp?t_id=<%=t_id%>">
+			<td><a id="Wcolor" href="delete_verify.jsp?t_id=<%=t_id%>">
 					취소 </a></td>
 		</tr>
 		<%
@@ -158,28 +158,31 @@
 		totalnum = cstmt4.getInt(2);
 		totalnum2 = cstmt4.getInt(3);
 
-} catch (SQLException ex) {
-System.err.println("SQLException: " + ex.getMessage());
-}
-
-} 
-} 
-stmt.close(); myConn.close();
+		} catch (SQLException ex) {
+		System.err.println("SQLException: " + ex.getMessage());
+		}
+		
+		} 
+		} 
+		stmt.close(); myConn.close();
 %>
 	</table>
-	
+
 	<br>
 	<br>
-    <br>
+	<br>
 
 	<div id="CountInfo" align="center" style="font-weight: bold;">
-        수강신청한 강의 수 : <%=nTotalCourse%>개 &nbsp;&nbsp;&nbsp; 
-        <br><br> 누적 학점 수 : <%=nTotalUnit%>학점 / 18학점 
-        &nbsp;&nbsp; [전공 <%=totalnum%>학점 &nbsp;+&nbsp; 교양 <%=totalnum2%>학점]
-    </div>
-    
-    <br>
-    <br>
-    
+		수강신청한 강의 수 :
+		<%=nTotalCourse%>개 &nbsp;&nbsp;&nbsp; <br>
+		<br> 누적 학점 수 :
+		<%=nTotalUnit%>학점 / 18학점 &nbsp;&nbsp; [전공
+		<%=totalnum%>학점 &nbsp;+&nbsp; 교양
+		<%=totalnum2%>학점]
+	</div>
+
+	<br>
+	<br>
+
 </body>
 </html>

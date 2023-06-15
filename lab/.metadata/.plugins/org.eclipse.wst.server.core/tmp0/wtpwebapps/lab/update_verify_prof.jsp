@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
@@ -9,15 +9,15 @@
 </head>
 <body>
 	<%
-request.setCharacterEncoding("utf-8");
-String driver = "oracle.jdbc.driver.OracleDriver";
-String url = "jdbc:oracle:thin:@localhost:1521:xe";
-String user = "leebk";
-String password = "1124";
-Connection myConn = null;
-Statement stmt = null;
+	request.setCharacterEncoding("utf-8");
+	String driver = "oracle.jdbc.driver.OracleDriver";
+	String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	String user = "leebk";
+	String password = "1124";
+	Connection myConn = null;
+	Statement stmt = null;
 
-try{
+	try{
 	   Class.forName(driver);
 	   myConn = DriverManager.getConnection(url, user, password);
 	   myConn.setAutoCommit(false);
@@ -35,11 +35,10 @@ try{
 	String mySQL = "update professor set p_pwd = '" + userPassword + "', p_loc = '" + userLoc + "', p_phone = '" + userPhone + "' where p_id = '" + session_id + "'";
 
 	try{
-		/* cstmt.execute(); */
 	    stmt.executeUpdate(mySQL); %>
-	    <script>alert('수정 완료');</script>
-	   <% myConn.commit();%>
-		<script>location.href = 'update_prof.jsp';</script>
+	<script>alert('수정 완료');</script>
+	<% myConn.commit();%>
+	<script>location.href = 'update_prof.jsp';</script>
 	<%}catch(SQLException ex){
 		String sMessage;
 		if(ex.getErrorCode() == 20006)   sMessage = "암호는 4자리 이상이어야 합니다";

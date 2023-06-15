@@ -20,19 +20,15 @@
 		<td>
 			<% if (session_id.length() == 7) {%> <a href="update.jsp">마이페이지</a> <%} else if (session_id.length() == 5) {%>
 			<a href="update_prof.jsp">마이페이지</a> <% }
-		else { %>
-			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-			<%} %> <%}%>
+				else { %>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p> <%} %> <%}%>
 		</td>
 		<td>
 			<% String log;
-if (session_id == null)
-log = "<a href=login.jsp>로그인</a>";
-else log = "<a href=logout.jsp>로그아웃</a>"; %>
+			if (session_id == null)
+			log = "<a href=login.jsp>로그인</a>";
+			else log = "<a href=logout.jsp>로그아웃</a>"; %>
 			<p class="title"><%=log%></p>
-
-
-
 		</td>
 
 		<td></td>

@@ -30,11 +30,9 @@ rs = stmt.executeQuery(mySQL);
 
 if(rs.next()){
 	session.setAttribute("user", userID);
-	System.out.println("드디어 됩니당");
 	response.sendRedirect("main.jsp");
 }
 else{
-	System.out.println("웅 절대안대");
 	response.sendRedirect("login.jsp"); 
 }
 

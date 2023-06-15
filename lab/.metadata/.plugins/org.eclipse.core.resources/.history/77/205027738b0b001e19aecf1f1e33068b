@@ -1,0 +1,135 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*"%>
+<!DOCTYPE html>
+<html>
+<head>
+<link href="style.css?after" rel="stylesheet" type="text/css">
+<meta charset="UTF-8">
+<title>신청학생 조회</title>
+</head>
+<body>
+	<%@ include file="user.jsp"%>
+	<%@ include file="top_prof.jsp"%>
+	
+	<%
+	session_id = (String)session.getAttribute("user");
+	String tid = request.getParameter("tid"); 
+	String c_name = request.getParameter("cname");
+	%>
+	
+	<br>
+	<table width="70%" align="center" class="deleteTable" border>
+		<br>
+			<tr>
+				<th>수업번호</th>
+				<th>과목번호</th>
+				<th>분반</th>
+				<th>과목명</th>
+				<th>교시</th>
+				<th>장소</th>
+				<th>수강정원</th>
+				<th>수정</th>
+			</tr>
+			
+			
+	<%
+	Connection Conn = null;
+	Statement stmt = null;
+	ResultSet rset = null;
+	
+	String mySQL = "";
+	PreparedStatement pstmt = null;
+	int nYear = 0;
+	int nSemester = 0;
+	
+	String dburl = "jdbc:oracle:thin:@localhost:1521:xe";
+	String user = "leebk";
+	String passwd = "1124";
+	String dbdriver = "oracle.jdbc.driver.OracleDriver";  
+	
+	try {
+		Class.forName(dbdriver);
+		Conn = DriverManager.getConnection(dburl, user, passwd);
+		Conn.setAutoCommit(false);
+		stmt = Conn.createStatement();
+		
+		CallableStatement cstmt = Conn.prepareCall("{? = call Date2EnrollYear(SYSDATE)}");
+		cstmt.registerOutParameter(1, java.sql.Types.INTEGER);
+		cstmt.execute();
+		nYear = cstmt.getInt(1)-2000;
+		
+		CallableStatement cstmt2 = Conn.prepareCall("{? = call Date2EnrollSemester(SYSDATE)}");
+		cstmt2.registerOutParameter(1, java.sql.Types.INTEGER);
+		cstmt2.execute();
+		nSemester = cstmt2.getInt(1);
+		%>
+	<script>document.getElementById('semesterInfo').innerHTML = "<%=nYear%>년  <%=nSemester%>학기";</script>
+			<%
+	} catch (SQLException ex) {
+		System.err.println("SQLException: " + ex.getMessage());
+	} catch (ClassNotFoundException ex) {
+		System.err.println("ClassNotFoundException: " + ex.getMessage());
+	} finally{
+	      if(stmt != null)
+		         try{Conn.commit(); stmt.close();
+		         }catch(SQLException e){System.err.println("SQLException: " + e.getMessage());}
+		   }
+	%>
+
+			<br>
+			<br>
+			
+			<div>
+				<input value="<%=c_name%> 신청 학생" readonly></h2>
+			</div>
+
+			<br>
+			<br>
+
+			<div>
+				<input type="text" id="semesterInfo"
+					value="<%= nYear %>년 <%= nSemester %>학기" readonly></input>
+			</div>
+
+			<br>
+			<br>
+
+			<%
+ 	mySQL = "select c.c_id, c.c_id_no, c.c_name, t.t_time, t.t_loc, t.t_max, t.p_id from teach t, course c where t.t_id = '" 
+ 			+ tid 
+ 			+ "' and t.p_id ='"
+ 			+ session_id + "' and t.c_id = c.c_id and t.c_id_no = c.c_id_no and t_year = ? and t_semester = ?";
+	System.out.println("include: " + tid);
+	
+	pstmt = Conn.prepareStatement(mySQL);
+	pstmt.setInt(1, nYear);
+	pstmt.setInt(2, nSemester);
+	rset = pstmt.executeQuery();
+  	
+	
+	while (rset.next()) {
+		String cid = rset.getString("c_id");
+		int cidno = rset.getInt("c_id_no");
+		String cname = rset.getString("c_name");
+		int ttime = rset.getInt("t_time");
+		String tloc = rset.getString("t_loc");
+		int tmax = rset.getInt("t_max");
+
+	%>
+			<script>
+			document.getElementsByName("tid")[0].value = '<%=tid%>';
+			document.getElementsByName("cid")[0].innerHTML = '<%=cid%>';
+			document.getElementsByName("cidno")[0].innerHTML = '<%=cidno%>';
+			document.getElementsByName("cname")[0].innerHTML = '<%=cname%>';
+		    document.getElementsByName("teachTime")[0].value = '<%=ttime%>';
+		    document.getElementsByName("teachLoc")[0].value = "<%=tloc%>";
+		    document.getElementsByName("teachMax")[0].value = "<%=tmax%>";
+		</script>
+			<%
+	} %>
+		
+		
+	</table>
+</body>
+</html>

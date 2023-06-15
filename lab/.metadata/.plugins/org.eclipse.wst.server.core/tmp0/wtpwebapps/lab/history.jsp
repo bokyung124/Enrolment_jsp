@@ -112,8 +112,6 @@
 			<th>학점</th>
 		</tr>
 
-
-
 		<%
 		mySQL = "select e.e_id, e.c_id, c.c_name, e.e_year, e.e_semester, h.h_score, p.p_name FROM history h, course c, enroll e, professor p, teach t"
 				+ " where h.e_id = e.e_id and e.c_id = c.c_id and e.c_id_no = c.c_id_no and e.t_id = t.t_id and t.p_id = p.p_id and e.s_id = '"

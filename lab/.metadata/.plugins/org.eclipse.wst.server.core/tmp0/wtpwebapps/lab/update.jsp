@@ -18,7 +18,7 @@
 	<br>
 	<br>
 	<br>
-	<table width="70%" align="center" class="mypage-table"  border>
+	<table width="70%" align="center" class="mypage-table" border>
 		<form method="post" action="update_verify.jsp">
 			<tr height='50px'>
 				<td><div>
@@ -78,7 +78,7 @@
 						<input type="text" name="userPhone" class="editable">
 					</div></td>
 			</tr>
-			<tr height='20px' >
+			<tr height='20px'>
 				<td colspan=2><div align="center">
 						<input type="SUBMIT" name="Submit" value="수정">
 					</div></td>
@@ -116,7 +116,7 @@
 				String addr = rs.getString("s_address");
 				
 		%>
-			<script>
+		<script>
 		      document.getElementsByName("userPassword")[0].value = '<%=pwd%>';
 		      document.getElementsByName("userName")[0].innerHTML = "<%=name%>";
 		      document.getElementsByName("userMajor")[0].innerHTML = "<%=major%>";
@@ -124,7 +124,7 @@
 		      document.getElementsByName("userEmail")[0].value = '<%=email%>';
 		      document.getElementsByName("userPhone")[0].value = '<%=phone%>';
 		      document.getElementsByName("userAddress")[0].value = '<%=addr%>';
-		      </script>
+		</script>
 		<%}
    else{
    }

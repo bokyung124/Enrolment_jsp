@@ -135,7 +135,6 @@
  			+ tid 
  			+ "' and t.p_id ='"
  			+ session_id + "' and t.c_id = c.c_id and t.c_id_no = c.c_id_no and t_year = ? and t_semester = ?";
-	System.out.println("include: " + tid);
 	
 	pstmt = Conn.prepareStatement(mySQL);
 	pstmt.setInt(1, nYear);
@@ -152,7 +151,7 @@
 		int tmax = rset.getInt("t_max");
 
 	%>
-			<script>
+		<script>
 			document.getElementsByName("tid")[0].value = '<%=tid%>';
 			document.getElementsByName("cid")[0].innerHTML = '<%=cid%>';
 			document.getElementsByName("cidno")[0].innerHTML = '<%=cidno%>';

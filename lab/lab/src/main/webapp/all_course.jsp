@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
 <%
 int nTotalCourse = 0;
@@ -10,16 +11,13 @@ int nTotalUnit = 0;
 <title>수강신청 조회</title>
 </head>
 <body>
-    <%@ include file="user.jsp"%>
-    <%@ include file="top.jsp"%>
-    <%
+	<%@ include file="user.jsp"%>
+	<%@ include file="top.jsp"%>
+	<%
     
     if (session_id == null || session_id.isEmpty()) { // session_id가 null이거나 비어있을 경우 로그인 페이지로 리다이렉트
         response.sendRedirect("login.jsp");
     } else {
-      
-         
-         
         String dbdriver = "oracle.jdbc.driver.OracleDriver";
         String url = "jdbc:oracle:thin:@localhost:1521:xe";
         String user = "leebk"; 
@@ -32,13 +30,16 @@ int nTotalUnit = 0;
             
             CallableStatement cstmt = connection.prepareCall("{? = call Date2EnrollYear(SYSDATE)}"); //stored function 이용
             cstmt.registerOutParameter(1, java.sql.Types.INTEGER);
+            
             CallableStatement cstmt2 = connection.prepareCall("{? = call Date2EnrollSemester(SYSDATE)}");
             cstmt2.registerOutParameter(1, java.sql.Types.INTEGER);
             
             cstmt.execute();
             cstmt2.execute();
+            
             int nYear = cstmt.getInt(1);
             int nSemester = cstmt2.getInt(1);
+            
             String _param = request.getParameter("searchText");
             String _param2 = request.getParameter("searchMajor");
             
@@ -59,63 +60,65 @@ int nTotalUnit = 0;
             ResultSet resultSet = statement.executeQuery(query);
             
             %>
-            <br>
-            <br>
-            <br>
-           
-            <table align="center">
-            <td> 과목명 </td>
-			<td> </td>
-			<td> </td>
-			<td> </td>
-            <td>
-            
-            <form action="./all_course.jsp" >
-            <div id="SearchField">
-            <td><input type="text" class="form-control" placeholder="과목명 입력" name="searchText" maxlength="30"></td>
-            <td><button type="submit"  id="search" class = "searchButton">검색</button></td> 
-            
-            </div>
-         	</form>
-         	</td>
-			
-			<td> </td>
-			<td> </td>
-			<td> </td>
-			<td> </td>
-			<td> </td>
-			<td> </td>
-			<td> </td>
-			<td> 전공 </td>
-			<td> </td>
-			<td> </td>
-			<td> </td>
-			
-    		<td>
-            <form action="./all_course.jsp">
-            <div id="SearchMajor">
-            <td><input type="text" class="form-control" placeholder="전공명 입력" name="searchMajor" maxlength="30"></td>
-            <td><button type="submit"  id="search" class = "searchButton">검색</button></td> 
-  
-          
-	        </div>
-	        </form>
-         </td>
-         </table>
-   
-            <table width="70%" align="center" border class = "deleteTable">
-                <br>
-                <tr>
-                    <th>과목번호</th>
-                    <th>분반</th>
-                    <th>과목명</th>
-                  	<th>전공</th>
-                    <th>교수</th>
-                    <th>학기</th>
-                    <th>시간</th>
-                    <th>장소</th>
-                </tr>
-            <%   
+	<br>
+	<br>
+	<br>
+
+	<table align="center">
+		<td>과목명</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>
+
+			<form action="./all_course.jsp">
+				<div id="SearchField">
+					<td><input type="text" class="form-control"
+						placeholder="과목명 입력" name="searchText" maxlength="30"></td>
+					<td><button type="submit" id="search" class="searchButton">검색</button></td>
+
+				</div>
+			</form>
+		</td>
+
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>전공</td>
+		<td></td>
+		<td></td>
+		<td></td>
+
+		<td>
+			<form action="./all_course.jsp">
+				<div id="SearchMajor">
+					<td><input type="text" class="form-control"
+						placeholder="전공명 입력" name="searchMajor" maxlength="30"></td>
+					<td><button type="submit" id="search" class="searchButton">검색</button></td>
+
+
+				</div>
+			</form>
+		</td>
+	</table>
+
+	<table width="70%" align="center" border class="deleteTable">
+		<br>
+		<tr>
+			<th>과목번호</th>
+			<th>분반</th>
+			<th>과목명</th>
+			<th>전공</th>
+			<th>교수</th>
+			<th>학기</th>
+			<th>시간</th>
+			<th>장소</th>
+		</tr>
+		<%   
             while (resultSet.next()) {
                 String c_id = resultSet.getString("c_id");
                 int c_id_no = resultSet.getInt("c_id_no");
@@ -127,17 +130,17 @@ int nTotalUnit = 0;
                 String t_loc = resultSet.getString("t_loc");
                 
                 %>
-                <tr class="class_search">
-                    <td><%=c_id%></td>
-                    <td><%=c_id_no%></td>
-                    <td><%=c_name%></td>
-                    <td><%=c_major%></td>
-                    <td><%=p_name%></td>
-                    <td><%=t_semester%></td>
-                    <td><%=t_time%></td>
-                    <td><%=t_loc%></td>
-                </tr>
-                <%
+		<tr class="class_search">
+			<td><%=c_id%></td>
+			<td><%=c_id_no%></td>
+			<td><%=c_name%></td>
+			<td><%=c_major%></td>
+			<td><%=p_name%></td>
+			<td><%=t_semester%></td>
+			<td><%=t_time%></td>
+			<td><%=t_loc%></td>
+		</tr>
+		<%
                 /* nTotalCourse++;
                 nTotalUnit += 3; // 가정: 모든 과목은 3학점 */
             }
@@ -151,12 +154,7 @@ int nTotalUnit = 0;
         }
     }
     %>
-    
-    <!-- 필요없는 것 같아서 우선 뺐어용 -->
- <%--    <div id="CountInfo" align="center" style="font-weight: bold;" >
-        이번학기 총 강의 수 : <%=nTotalCourse%>개 &nbsp;&nbsp;&nbsp; 누적 학점 수 : <%=nTotalUnit%>학점
-    </div> --%>
-    
-</table>
+
+	</table>
 </body>
 </html>

@@ -114,22 +114,12 @@
 				<td><%=ttime%></td>
 				<td><%=tloc%></td>
 				<td><%=tmax%></td>
-				<td><a id="Wcolor"
-					href="course_update_inside.jsp?tid=<%=tid%>"> 수정 </a></td>
-					
+				<td><a id="Wcolor" href="course_update_inside.jsp?tid=<%=tid%>">
+						수정 </a></td>
+
 				<script>
 				document.getElementsByName("tid")[0].value = '<%=tid%>';
 				</script>
-
-				<%-- <script>
-			document.getElementsByName("tid")[0].value = '<%=tid%>';
-			document.getElementsByName("cid")[0].innerHTML = '<%=cid%>';
-			document.getElementsByName("cidno")[0].innerHTML = '<%=cidno%>';
-			document.getElementsByName("cname")[0].innerHTML = '<%=cname%>';
-		    document.getElementsByName("teachTime")[0].value = '<%=ttime%>';
-		    document.getElementsByName("teachLoc")[0].value = "<%=tloc%>";
-		    document.getElementsByName("teachMax")[0].value = "<%=tmax%>";
-		</script> --%>
 
 			</tr>
 		</form>

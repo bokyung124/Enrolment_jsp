@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
 	<%
 	request.setCharacterEncoding("utf-8");
 	String driver = "oracle.jdbc.driver.OracleDriver";
@@ -20,7 +19,7 @@
 	PreparedStatement stmt = null;
 
 
-try{
+	try{
 	   Class.forName(driver);
 	   myConn = DriverManager.getConnection(url, user, password);
 	   myConn.setAutoCommit(false);
@@ -32,18 +31,13 @@ try{
 	}
 
  	String session_id = (String)session.getAttribute("user"); 
- 	
 	String tid = request.getParameter("tid");
 	int teachTime = Integer.parseInt(request.getParameter("teachTime"));
 	String teachLoc = request.getParameter("teachLoc");
 	int teachMax = Integer.parseInt(request.getParameter("teachMax"));
-	
-	System.out.println("verify: " + tid);
 
 	String mySQL = "update teach set t_time = " + teachTime + ", t_loc = '" + teachLoc + "', t_max = " + teachMax 
 					+ " where t_id = '" + tid + "'";
-	
-	System.out.println(teachMax);
 
 	try{
 		stmt = myConn.prepareStatement(mySQL);
@@ -60,8 +54,10 @@ try{
 		else if(ex.getErrorCode() == 20008)   sMessage = "전화번호 형식이 맞지 않습니다. 하이픈 형식으로 넣어주세요.";
 		else */ 
 		sMessage = Integer.toString(ex.getErrorCode());
-		%><script>alert('<%=sMessage%>');
-		location.href = 'course_update.jsp';</script>
+		%><script>alert('<%=sMessage%>
+			');
+			location.href = 'course_update.jsp';
+		</script>
 	<%}%>
 </body>
 </html>
