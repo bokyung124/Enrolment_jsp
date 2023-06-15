@@ -337,3 +337,4 @@
 0:0:0:0:0:0:0:1 - - [15/Jun/2023:16:08:18 +0900] "GET /lab/history.jsp HTTP/1.1" 200 2953
 0:0:0:0:0:0:0:1 - - [15/Jun/2023:16:08:20 +0900] "GET /lab/history.jsp?searchYear=21&searchSem= HTTP/1.1" 200 2392
 0:0:0:0:0:0:0:1 - - [15/Jun/2023:16:08:22 +0900] "GET /lab/history.jsp?searchYear=23&searchSem= HTTP/1.1" 200 2392
+0:0:0:0:0:0:0:1 - - [15/Jun/2023:16:17:11 +0900] "GET /lab/history.jsp?searchYear=23&searchSem= HTTP/1.1" 200 2392
