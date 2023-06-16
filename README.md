@@ -1,5 +1,12 @@
 # bokyung
 
+### 테스트 데이터
+#### student: 2012345
+#### professor: 57664
+
+<br>
+<br>
+
 6/6 21:57 변경 파일
 - table.sql
 - CountSelected.sql
