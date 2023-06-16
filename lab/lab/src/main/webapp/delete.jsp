@@ -148,7 +148,7 @@
 		nTotalUnit = cstmt3.getInt(4);
 		nTotalCourse = cstmt3.getInt(5);
 		
-		CallableStatement cstmt4 = myConn.prepareCall("{call MajorCount(?,?,?)}");
+		CallableStatement cstmt4 = myConn.prepareCall("{call Enrollcount(?,?,?)}");
 		cstmt4.setString(1, session_id);
 		cstmt4.registerOutParameter(2, java.sql.Types.INTEGER);
 		cstmt4.registerOutParameter(3, java.sql.Types.INTEGER);
@@ -176,9 +176,7 @@
 		수강신청한 강의 수 :
 		<%=nTotalCourse%>개 &nbsp;&nbsp;&nbsp; <br>
 		<br> 누적 학점 수 :
-		<%=nTotalUnit%>학점 / 18학점 &nbsp;&nbsp; [전공
-		<%=totalnum%>학점 &nbsp;+&nbsp; 교양
-		<%=totalnum2%>학점]
+		<%=nTotalUnit%>학점 / 18학점 &nbsp;&nbsp;
 	</div>
 
 	<br>

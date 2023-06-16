@@ -6,13 +6,13 @@
 <head>
 <link href="style.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
-<title>수강신청 입력</title>
+<title>장바구니</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 
-	<%@include file="user.jsp"%>
+<%@include file="user.jsp"%>
 	<%@ include file="top.jsp"%>
 	<br>
 	<% if (session_id == null) response.sendRedirect("login.jsp"); %>
@@ -40,12 +40,12 @@
       myConn = DriverManager.getConnection(url, user, password);
       myConn.setAutoCommit(false);
       stmt = myConn.createStatement();
-      
-      //테이블 출력 pstmt
-      pstmt = myConn.prepareStatement("select c.c_id, c.c_id_no, c_name, c_unit, c_major, t_time, p.p_name, t_loc, t_max" 
+      pstmt = myConn.prepareStatement //테이블 출력 pstmt
+    		  
+            ("select c.c_id, c.c_id_no, c_name, c_unit, c_major, t_time, p.p_name, t_loc, t_max" 
       + " from course c, teach t, professor p, heart h where c.c_id = t.c_id and c.c_id_no = t.c_id_no and p.p_id = t.p_id"
-      + " and t_year = ? and t_semester = ? and c_major LIKE ? ORDER BY c.c_id");
-      // (t.t_id) in(select h.t_id from heart where s_id = ?) and 
+      + " and t_year = ? and t_semester = ? and (t.t_id) in(select h.t_id from heart where s_id = ?) and c_major LIKE ? ORDER BY c.c_id");
+     System.out.println(pstmt+"💙💙💙💙💙💙💙");
    }catch(ClassNotFoundException e){
       System.out.println("jdbc driver 로딩 실패");
    }catch(SQLException e){
@@ -54,7 +54,6 @@
    //현 학기에 해당하는 과목만 보여주기
    CallableStatement cstmt = myConn.prepareCall("{? = call Date2EnrollYear(SYSDATE)}"); //stored function 이용
    cstmt.registerOutParameter(1, java.sql.Types.INTEGER);
-   
    CallableStatement cstmt2 = myConn.prepareCall("{? = call Date2EnrollSemester(SYSDATE)}");
    cstmt2.registerOutParameter(1, java.sql.Types.INTEGER);
    try{
@@ -73,12 +72,12 @@
          try{myConn.commit(); cstmt.close();
          }catch(SQLException e){System.err.println("SQLException: " + e.getMessage());}
    }
-   
    //login 사용자의 전공
    majorSQL = "select s_major from student where s_id = '" + session_id + "'";
    majorResultSet = stmt.executeQuery(majorSQL);
    if(majorResultSet.next()){
       loginMajor = majorResultSet.getString(1);   
+      System.out.println(loginMajor);
    }%>
 	<div class="tab_menu_container" align="center">
 		<br>
@@ -92,35 +91,37 @@
 	<%
          String indexName = "box_" + i;%>
 	<table width="70%" align="center" class="tab_box deleteTable"
-		id="<%=indexName%>" border>
-
+	id="<%=indexName%>"
+		border>
+		
 		<%if(i == 0){
             pstmt.setInt(1, nYear-2000); 
+            System.out.println(nYear-2000+ "mmmmmmmmmmm");
             pstmt.setInt(2, nSemester);
-            /* pstmt.setString(3, session_id); */ 
-            pstmt.setString(3, "%");
+            pstmt.setString(3, session_id); 
+            pstmt.setString(4, "%");
          }
 		
          else if(i == 1){
              pstmt.setInt(1, nYear-2000); 
              pstmt.setInt(2, nSemester);
-            /* pstmt.setString(3, session_id); */
-            pstmt.setString(3, loginMajor);   
+            pstmt.setString(3, session_id);
+            pstmt.setString(4, loginMajor);   
 
          }
 		
          else if(i == 2){
              pstmt.setInt(1, nYear-2000); 
              pstmt.setInt(2, nSemester);
-          /*   pstmt.setString(3, session_id);  */
-            pstmt.setString(3, "교양");   
+            pstmt.setString(3, session_id); 
+            pstmt.setString(4, "교양");   
 
          }
          else if(i == 3){
              pstmt.setInt(1, nYear-2000); 
              pstmt.setInt(2, nSemester);
- /*            pstmt.setString(3, session_id); */
-            pstmt.setString(3, "%");   
+            pstmt.setString(3, session_id);
+            pstmt.setString(4, "%");   
          }
 			
          %>
@@ -136,12 +137,20 @@
 			<th>정원</th>
 			<th>수강신청</th>
 			<th>장바구니</th>
-
+			
 		</tr>
-
+		
 		<% myResultSet = pstmt.executeQuery();
+		System.out.println("😊😊😊😊😊😊😊😊");
+		System.out.println(myResultSet);
          if(myResultSet != null){
+        	 System.out.println("slsllslslsllslslls");
+        	 if(myResultSet.next() == false ){
+        		 System.out.println("33333");
+        	 }
             while(myResultSet.next()){
+
+           	 System.out.println("qpqpqpqpqpqpqpqpqpqpqpqppq");
                String c_id = myResultSet.getString(1);
                System.out.println(c_id);
                int c_id_no = myResultSet.getInt(2);
@@ -156,7 +165,7 @@
                   if(c_major.equals(loginMajor) || c_major.equals("교양"))  
                 	  continue;
             }%>
-		<tr>
+			<tr>
 			<td><%=myResultSet.getString(1) %></td>
 			<td><%=c_id_no %></td>
 			<td><%=c_name %></td>
@@ -168,15 +177,14 @@
 			<td><%=t_max %></td>
 			<td><a id="Wcolor"
 				href="insert_verify.jsp?c_id=<%=c_id%>&c_id_no=<%=c_id_no%>">신청</a></td>
-			<td><a id="Wcolor"
-				href="cart_verify.jsp?c_id=<%=c_id%>&c_id_no=<%=c_id_no%>"
-				class="cartHeart">💚</a></td>
+		<td><a id="Wcolor"
+				href="cart_verify.jsp?c_id=<%=c_id%>&c_id_no=<%=c_id_no%>" class = "cartHeart">💚</a></td>
 		</tr>
 		<%}
          }%>
 	</table>
-
-	<%-- 		<br>
+	
+<%-- 		<br>
 	<br>
 	<div id="CountInfo" align="center" style="font-weight: bold;">
 		수강신청한 강의 수 :

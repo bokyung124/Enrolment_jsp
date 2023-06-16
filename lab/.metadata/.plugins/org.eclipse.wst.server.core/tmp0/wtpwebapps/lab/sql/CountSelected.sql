@@ -7,7 +7,7 @@ nTotalCourse OUT number
 )
 
 is
-v_course course%ROWTYPE;
+	v_course course%ROWTYPE;
 
 cursor cur
 is
@@ -19,15 +19,15 @@ e.t_id = t.t_id and
 t.c_id = c.c_id and t.c_id_no = c.c_id_no;
 
 begin
-nTotalUnit := 0;
-nTotalCourse := 0;
+	nTotalUnit := 0;
+	nTotalCourse := 0;
 
-open cur;
-loop
-fetch cur into v_course.c_id, v_course.c_id_no, v_course.c_unit ;
-exit when cur%notfound;
-nTotalUnit := nTotalUnit + v_course.c_unit;
-nTotalCourse := nTotalCourse + 1;
+	open cur;
+	loop
+	fetch cur into v_course.c_id, v_course.c_id_no, v_course.c_unit ;
+	exit when cur%notfound;
+	nTotalUnit := nTotalUnit + v_course.c_unit;
+	nTotalCourse := nTotalCourse + 1;
 end loop;
 close cur;
 end;

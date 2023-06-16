@@ -172,6 +172,8 @@
 		<%=totalnum%>학점 &nbsp;&nbsp; / &nbsp;&nbsp; 교양 :
 		<%=totalnum2%>학점 &nbsp;&nbsp;&nbsp;
 	</div>
+	<br>
+	<br>
 
 </body>
 </html>

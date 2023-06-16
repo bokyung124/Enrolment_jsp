@@ -13,10 +13,9 @@ create table student (
 insert into student values ('2012345', '김소미', 3, '소프트웨어학부', 'a1245', 'som45@sm.ac.kr', '010-2837-2993', '서울시 강서구');
 insert into student values ('2212346', '이서연', 2, '소프트웨어학부', 'asdo37', 'seoseo@sm.ac.kr', '010-2111-2020', '서울시 강북구');
 insert into student values ('2112347', '박수진', 3, '소프트웨어학부', 'hihihi', 'jjin11@sm.ac.kr', '010-0999-2823', '서울시 강남구');
-insert into student values ('2012348', '정채영', 4, '소프트웨어학부', 'jung01', 'youngirl@sm.ac.kr', '010-1234-4833', '서울시 강동구');
-insert into student values ('2012001', '유미래', 1, '기초공학부', 'miraeya', 'future00@sm.ac.kr', '010-1324-5325', '서울시 종로구');
+insert into student values ('2012348', '정채영', 4, '경영학부', 'jung01', 'youngirl@sm.ac.kr', '010-1234-4833', '서울시 강동구');
+insert into student values ('2012349', '유미래', 1, '기초공학부', 'miraeya', 'future00@sm.ac.kr', '010-1324-5325', '서울시 종로구');
 
--- update student set s_major = '소프트웨어학부' where s_major='컴퓨터과학전공' or s_major = '소프트웨어융합전공' or s_major='데이터사이언스전공';
 
 create table professor (
     p_id    varchar2(10) NOT NULL,
@@ -56,17 +55,24 @@ create table course (
 );
 
 insert into course values ('102934', 001, '데이터베이스프로그래밍', 3, '소프트웨어학부', 3);
-insert into course values ('102229', 002, '데이터마이닝및분석', 3, '소프트웨어학부', 3);
+insert into course values ('102229', 001, '데이터마이닝및분석', 3, '소프트웨어학부', 3);
 insert into course values ('102119', 001, '빅데이터통계분석', 3, '통계학과', 4);
+insert into course values ('108927', 001, 'R프로그래밍', 3, '통계학과', 2);
 insert into course values ('101098', 001, '프로그래밍입문', 3, '기초공학부', 1);
 insert into course values ('110294', 001, '데이터사이언스개론', 3, '소프트웨어학부', 2);
 insert into course values ('103917', 001, '소프트웨어의이해', 3, '소프트웨어학부', 1);
+insert into course values ('103917', 002, '소프트웨어의이해', 3, '소프트웨어학부', 1);
 insert into course values ('100542', 001, '운영체제', 3, '소프트웨어학부', 3);
 insert into course values ('100542', 002, '운영체제', 3, '소프트웨어학부', 3);
 insert into course values ('100542', 003, '운영체제', 3, '소프트웨어학부', 3);
 insert into course values ('100550', 001, '인공지능', 3, '소프트웨어학부', 4);
+insert into course values ('100550', 002, '인공지능', 3, '소프트웨어학부', 4);
 insert into course values ('100540', 001, '자료구조', 3, '소프트웨어학부', 3);
 insert into course values ('101715', 001, '컴파일러', 3, '소프트웨어학부', 4);
+insert into course values ('110984', 001, '데이터통계입문', 2, '소프트웨어학부', 1);
+insert into course values ('100753', 001, '네트워크', 3, '소프트웨어학부', 4);
+insert into course values ('120097', 001, '임베디드시스템', 3, '소프트웨어학부', 3);
+insert into course values ('100655', 001, '컴퓨터그래픽스', 3, '소프트웨어학부', 3);
 insert into course values ('100545', 001, '프로그래밍언어론', 3, '소프트웨어학부', 3);
 insert into course values ('101058', 001, '경영과학1', 3, '경영학부', 2);
 insert into course values ('101107', 001, '국제재무관리', 3, '경영학부', 4);
@@ -76,9 +82,6 @@ insert into course values ('101055', 002, '회계원리', 1, '경영학부', 3);
 insert into course values ('101055', 003, '회계원리', 1, '경영학부', 3);
 insert into course values ('101055', 004, '회계원리', 1, '경영학부', 3);
 insert into course values ('101055', 005, '회계원리', 1, '경영학부', 3);
-
--- update course set c_major = '소프트웨어학부' where c_major='컴퓨터과학전공' or c_major = '소프트웨어융합전공' or c_major='데이터사이언스전공';
-
 
 
 create table teach (
@@ -96,38 +99,55 @@ create table teach (
     CONSTRAINT teach_fk2 FOREIGN KEY (p_id) REFERENCES professor (p_id)
 );
 
-insert into teach values ('019', 22, 1, 1, '명신-206', 30, '102934', 001, '51345'); 
-insert into teach values ('020', 22, 1, 2, '명신-305', 30, '102229', 002, '57664'); 
-insert into teach values ('021', 22, 1, 3, '명신-305', 30, '101098', 001, '56783'); 
-insert into teach values ('022', 22, 1, 4, '명신-306', 30, '100550', 001, '57664');
-insert into teach values ('023', 22, 1, 5, '명신-418', 30, '102934', 001, '56783');
-insert into teach values ('024', 22, 1, 5, '새힘-311', 30, '101715', 001, '50919');
-insert into teach values ('025', 22, 1, 4, '명신-206', 30, '100540', 001, '50919');
+-- 23-2
+insert into teach values ('001', 23, 2, 1, '명신-109', 3, '102934', 001, '56789');
+insert into teach values ('002', 23, 2, 2, '명신-307', 50, '103917', 001, '56789');
+insert into teach values ('003', 23, 2, 2, '명신-510', 40, '100545', 001, '56789');
 
-insert into teach values ('026', 22, 1, 3, '명신-418', 30, '101107', 001, '33218');
-insert into teach values ('027', 22, 1, 2, '명신-206', 30, '101056', 001, '26865');
-insert into teach values ('028', 22, 1, 1, '새힘-311', 30, '101055', 001, '22393');
+insert into teach values ('004', 23, 2, 5, '명신-702', 90, '102229', 001, '56783');
+insert into teach values ('005', 23, 2, 3, '명신-508', 30, '100542', 001, '56783');
+insert into teach values ('006', 23, 2, 4, '명신-508', 30, '100542', 002, '56783');
+
+insert into teach values ('007', 23, 2, 1, '명신-212', 40, '103917', 002, '57664');
+insert into teach values ('008', 23, 2, 2, '명신-212', 50, '100540', 001, '57664');
+insert into teach values ('009', 23, 2, 3, '명신-308', 40, '101098', 001, '57664');
+
+insert into teach values ('010', 23, 2, 1, '순헌-307', 40, '101055', 001, '24958');
+insert into teach values ('011', 23, 2, 2, '순헌-307', 40, '101055', 002, '24958');
+insert into teach values ('012', 23, 2, 3, '순헌-307', 40, '101055', 003, '24958');
+insert into teach values ('013', 23, 2, 6, '순헌-510', 30, '101107', 001, '24958');
+
+insert into teach values ('014', 23, 2, 1, '진리-311', 40, '101058', 001, '33218');
+insert into teach values ('015', 23, 2, 3, '진리-309', 50, '101056', 001, '33218');
+insert into teach values ('016', 23, 2, 1, '순헌-210', 40, '101055', 004, '33218');
+insert into teach values ('017', 23, 2, 2, '순헌-210', 50, '101055', 005, '33218');
+
+insert into teach values ('035', 23, 2, 3, '사회-510', 30, '102119', 001, '39230');
+
+-- 23-1 
+insert into teach values ('018', 23, 1, 1, '명신-311', 30, '100545', 001, '52873');
+insert into teach values ('019', 23, 1, 3, '명신-510', 40, '103917', 001, '51345');
+insert into teach values ('020', 23, 1, 4, '명신-510', 50, '103917', 002, '57664');
+insert into teach values ('021', 23, 1, 2, '명신-408', 30, '100540', 001, '57664');
+insert into teach values ('022', 23, 1, 6, '명신-209', 40, '100542', 003, '57664');
+insert into teach values ('036', 23, 1, 6, '명신-304', 40, '100550', 002, '50919');
+
+-- 22-2 
+insert into teach values ('023', 22, 2, 2, '명신-410', 30, '100540', 001, '57664');
+insert into teach values ('024', 22, 2, 1, '명신-210', 40, '100753', 001, '57664');
+insert into teach values ('025', 22, 2, 3, '명신-311', 40, '101715', 001, '57664');
+insert into teach values ('026', 22, 2, 3, '명신-312', 40, '110294', 001, '56783');
+insert into teach values ('027', 22, 2, 3, '진리-409', 30, '101056', 001, '24958');
+insert into teach values ('028', 22, 2, 4, '진리-409', 30, '101058', 001, '24958');
 
 
-insert into teach values ('001', 23, 1, 1, '명신-206', 30, '102934', 001, '56789');
-insert into teach values ('002', 23, 1, 1, '명신-305', 50, '102229', 002, '56783');
-insert into teach values ('003', 23, 1, 2, '사회-509', 10, '102119', 001, '39230');
-insert into teach values ('004', 23, 1, 3, '명신-410', 20, '101098', 001, '23934');
-insert into teach values ('005', 23, 2, 3, '명신-410', 20, '101098', 001, '23934');
-insert into teach values ('006', 23, 2, 3, '명신-410', 20, '100542', 001, '57664');
-insert into teach values ('007', 23, 2, 3, '명신-310', 20, '100542', 002, '57664');
-insert into teach values ('008', 23, 2, 3, '명신-412', 20, '100542', 003, '52873');
-insert into teach values ('009', 23, 2, 3, '명신-411', 20, '100542', 001, '52873');
-insert into teach values ('010', 23, 2, 3, '명신-410', 20, '100542', 001, '52873');
-insert into teach values ('011', 23, 2, 3, '명신-413', 10, '101055', 001, '33218');
-insert into teach values ('012', 23, 2, 3, '명신-416', 60, '101055', 002, '33218');
-insert into teach values ('013', 23, 2, 3, '명신-418', 20, '101055', 003, '33218');
-insert into teach values ('014', 23, 2, 3, '명신-420', 50, '101055', 004, '12443');
-insert into teach values ('015', 23, 2, 3, '명신-311', 40, '101055', 005, '12443');
-insert into teach values ('016', 23, 2, 3, '새힘-302', 30, '101107', 001, '24958');
-insert into teach values ('017', 23, 2, 3, '새힘-302', 30, '101056', 001, '24958');
-insert into teach values ('018', 23, 2, 3, '새힘-311', 30, '101058', 001, '24958');
-
+-- 22-1
+insert into teach values ('029', 22, 1, 4, '명신-701', 70, '110984', 001, '57664');
+insert into teach values ('030', 22, 1, 1, '명신-210', 40, '120097', 001, '57664');
+insert into teach values ('031', 22, 1, 3, '명신-311', 50, '100655', 001, '57664');
+insert into teach values ('032', 22, 1, 3, '명신-312', 40, '101107', 001, '12443');
+insert into teach values ('033', 22, 1, 3, '사회-510', 30, '102119', 001, '39230');
+insert into teach values ('034', 22, 1, 2, '사회-510', 30, '108927', 001, '39230');
 
 
 create table enroll (
@@ -144,58 +164,48 @@ create table enroll (
     CONSTRAINT enroll_fk3 FOREIGN KEY (t_id) REFERENCES teach (t_id)
 );
 
---insert into enroll values ('001', 23, 1, '2012345', '102934', 001);
---insert into enroll values ('002', 23, 1, '2212346', '102229', 002);
---insert into enroll values ('003', 23, 1, '2112347', '102119', 001);
---insert into enroll values ('004', 23, 1, '2012348', '101098', 001);
---insert into enroll values ('005', 22, 1, '2012345', '102934', 001); 
---insert into enroll values ('006', 22, 1, '2012345', '102229', 002); 
---insert into enroll values ('007', 22, 1, '2012345', '101098', 001); 
---insert into enroll values ('008', 22, 1, '2012345', '100550', 001);
---insert into enroll values ('009', 22, 1, '2212346', '102934', 001);
---insert into enroll values ('010', 22, 1, '2212346', '101715', 001);
---insert into enroll values ('011', 22, 1, '2212346', '100540', 001);
---insert into enroll values ('012', 22, 1, '2112347', '101107', 001);
---insert into enroll values ('013', 22, 1, '2112347', '101056', 001);
---insert into enroll values ('014', 22, 1, '2112347', '101055', 001);
---insert into enroll values ('015', 22, 1, '2012348', '100550', 001);
---insert into enroll values ('016', 22, 1, '2012348', '102934', 001);
---insert into enroll values ('017', 22, 1, '2012348', '101715', 001);
---insert into enroll values ('018', 22, 1, '2012348', '100540', 001);
+-- 23-2
+insert into enroll values ('019', 23, 2, '2012345', '102934', 001, '001');
+insert into enroll values ('020', 23, 2, '2012345', '101055', 002, '012');
+insert into enroll values ('021', 23, 2, '2012345', '103917', 002, '007');
+insert into enroll values ('022', 23, 2, '2012345', '101098', 001, '009');
+insert into enroll values ('023', 23, 2, '2012345', '102119', 001, '035');
 
-insert into enroll values ('019', 23, 2, '2012345', '101055', 001, '028');
-insert into enroll values ('020', 23, 2, '2012345', '101107', 001, '016');
-insert into enroll values ('021', 23, 2, '2012345', '100542', 001, '010');
-insert into enroll values ('022', 23, 2, '2012345', '101056', 001, '017');
-insert into enroll values ('023', 23, 2, '2012345', '101058', 001, '018');
+insert into enroll values ('024', 23, 2, '2212346', '103917', 002, '007');
+insert into enroll values ('025', 23, 2, '2212346', '102934', 001, '001');
+insert into enroll values ('026', 23, 2, '2212346', '100540', 001, '008');
+insert into enroll values ('027', 23, 2, '2212346', '101098', 001, '009');
 
-insert into enroll values ('024', 23, 2, '2212346', '101058', 001, '018');
-insert into enroll values ('025', 23, 2, '2212346', '101056', 001, '017');
-insert into enroll values ('026', 23, 2, '2212346', '101107', 001, '016');
-insert into enroll values ('027', 23, 2, '2212346', '101055', 001, '011');
-insert into enroll values ('028', 23, 2, '2212346', '100542', 001, '006');
-insert into enroll values ('029', 23, 2, '2012345', '100542', 001, '006');
-insert into enroll values ('030', 23, 2, '2012348', '100540', 001, '007');
-insert into enroll values ('031', 23, 2, '2012345', '100540', 001, '007');
---
-insert into enroll values ('001', 23, 1, '2012345', '102934', 001, '001');
-insert into enroll values ('002', 23, 1, '2212346', '102229', 002, '002');
-insert into enroll values ('003', 23, 1, '2112347', '102119', 001, '003');
-insert into enroll values ('004', 23, 1, '2012348', '101098', 001, '004');
-insert into enroll values ('005', 22, 1, '2012345', '102934', 001, '019'); 
-insert into enroll values ('006', 22, 1, '2012345', '102229', 002, '020'); 
-insert into enroll values ('007', 22, 1, '2012345', '101098', 001, '021'); 
-insert into enroll values ('008', 22, 1, '2012345', '100550', 001, '022');
-insert into enroll values ('009', 22, 1, '2212346', '102934', 001, '019');
-insert into enroll values ('010', 22, 1, '2212346', '101715', 001, '024');
-insert into enroll values ('011', 22, 1, '2212346', '100540', 001, '025');
-insert into enroll values ('012', 22, 1, '2112347', '101107', 001, '026');
-insert into enroll values ('013', 22, 1, '2112347', '101056', 001, '027');
-insert into enroll values ('014', 22, 1, '2112347', '101055', 001, '028');
-insert into enroll values ('015', 22, 1, '2012348', '100550', 001, '022');
-insert into enroll values ('016', 22, 1, '2012348', '102934', 001, '019');
-insert into enroll values ('017', 22, 1, '2012348', '101715', 001, '024');
-insert into enroll values ('018', 22, 1, '2012348', '100540', 001, '025');
+insert into enroll values ('028', 23, 2, '2112347', '102934', 001, '001');
+insert into enroll values ('029', 23, 2, '2112347', '103917', 002, '007');
+insert into enroll values ('030', 23, 2, '2112347', '101055', 001, '010');
+insert into enroll values ('031', 23, 2, '2112347', '102119', 001, '035');
+
+insert into enroll values ('032', 23, 2, '2012348', '103917', 002, '007');
+insert into enroll values ('033', 23, 2, '2012348', '100540', 001, '008');
+insert into enroll values ('034', 23, 2, '2012348', '102229', 001, '004');
+
+insert into enroll values ('035', 23, 2, '2012349', '101055', 003, '012');
+insert into enroll values ('036', 23, 2, '2012349', '102119', 001, '035');
+
+--(2012345 학생)
+insert into enroll values ('001', 23, 1, '2012345', '100545', 001, '018');
+insert into enroll values ('002', 23, 1, '2012345', '100540', 001, '021');
+insert into enroll values ('003', 23, 1, '2012345', '100542', 003, '022');
+insert into enroll values ('004', 23, 1, '2012345', '100550', 002, '036');
+
+insert into enroll values ('005', 22, 2, '2012345', '100753', 001, '024'); 
+insert into enroll values ('006', 22, 2, '2012345', '101715', 001, '025'); 
+insert into enroll values ('007', 22, 2, '2012345', '110294', 001, '026'); 
+insert into enroll values ('008', 22, 2, '2012345', '101056', 001, '027');
+insert into enroll values ('009', 22, 2, '2012345', '101058', 001, '028');
+
+insert into enroll values ('014', 22, 1, '2012345', '110984', 001, '029');
+insert into enroll values ('015', 22, 1, '2012345', '120097', 001, '030');
+insert into enroll values ('016', 22, 1, '2012345', '101107', 001, '032');
+insert into enroll values ('017', 22, 1, '2012345', '100655', 001, '031');
+insert into enroll values ('018', 22, 1, '2012345', '108927', 001, '034');
+
 
 
 
@@ -208,20 +218,20 @@ create table history (
 	CONSTRAINT history_fk2  FOREIGN KEY (s_id) REFERENCES student (s_id)
 );
 
+insert into history values ('001', '2012345', 'A+');
+insert into history values ('002', '2012345', 'B+');
+insert into history values ('003', '2012345', 'A0');
+insert into history values ('004', '2012345', 'B-');
 insert into history values ('005', '2012345', 'A+');
 insert into history values ('006', '2012345', 'A+');
 insert into history values ('007', '2012345', 'A+');
-insert into history values ('008', '2012345', 'A+');
-insert into history values ('009', '2212346', 'A+');
-insert into history values ('010', '2212346', 'A+');
-insert into history values ('011', '2212346', 'A+');
-insert into history values ('012', '2112347', 'A+');
-insert into history values ('013', '2112347', 'A+');
-insert into history values ('014', '2112347', 'A+');
-insert into history values ('015', '2012348', 'A+');
-insert into history values ('016', '2012348', 'A+');
-insert into history values ('017', '2012348', 'A+');
-insert into history values ('018', '2012348', 'A+');
+insert into history values ('008', '2012345', 'B+');
+insert into history values ('009', '2012345', 'B0');
+insert into history values ('014', '2012345', 'A0');
+insert into history values ('015', '2012345', 'A+');
+insert into history values ('016', '2012345', 'B-');
+insert into history values ('017', '2012345', 'A+');
+insert into history values ('018', '2012345', 'A0');
 
 
 create table heart (
@@ -232,7 +242,7 @@ create table heart (
 	CONSTRAINT heart_fk2 FOREIGN KEY (t_id) REFERENCES teach (t_id)
 );
 
-insert into heart values ('2012345', '018');
-insert into heart values ('2012348', '016');
+insert into heart values ('2012345', '013');
+insert into heart values ('2012345', '003');
 
 
