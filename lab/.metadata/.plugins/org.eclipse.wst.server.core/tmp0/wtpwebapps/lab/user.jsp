@@ -8,6 +8,8 @@
 
 <br>
 <br>
+
+<br><div><a class = "clover" href="main.jsp">🍀</a></div>
 <table class="top" width="500px" align="right">
 	<tr>
 		<td>
