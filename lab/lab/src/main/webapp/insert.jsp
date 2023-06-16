@@ -23,25 +23,34 @@
    String url = "jdbc:oracle:thin:@localhost:1521:xe";
    String user = "leebk";
    String password = "1124";
+   
    Connection myConn = null;
    Statement stmt = null;
+   
    PreparedStatement pstmt = null;
+   PreparedStatement pstmt2 = null;
+   int nEnrollStudent = 0;
+   
+   String nSQL = "";
    String mySQL = "";
    String majorSQL = "";
    String loginMajor = "";
    ResultSet myResultSet = null;
    ResultSet majorResultSet = null;
+   ResultSet enrollSet = null;
+   
    int currentTab = 0;
    int sem = 0; 
    int nYear = 0;
    int nSemester = 0;
+   
    try{
       Class.forName(driver);
       myConn = DriverManager.getConnection(url, user, password);
       myConn.setAutoCommit(false);
       stmt = myConn.createStatement();
       pstmt = myConn.prepareStatement //테이블 출력 pstmt
-            ("select c.c_id, c.c_id_no, c_name, c_unit, c_major, t_time, p.p_name, t_loc, t_max" 
+            ("select c.c_id, c.c_id_no, c_name, c_unit, c_major, t.t_id, t_time, p.p_name, t_loc, t_max" 
       + " from course c, teach t, professor p where c.c_id = t.c_id and c.c_id_no = t.c_id_no and p.p_id = t.p_id"
       + " and t_year = ? and t_semester = ? and c_major LIKE ? ORDER BY c.c_id");
    }catch(ClassNotFoundException e){
@@ -60,7 +69,9 @@
       nYear = cstmt.getInt(1);
       nSemester = cstmt2.getInt(1);
        sem = nYear * 10 + nSemester; 
-      %><script>document.getElementById('semesterInfo').innerHTML = "<%=nYear%>년  <%=nSemester%>학기";</script>
+      %><script>document.getElementById('semesterInfo').innerHTML = "<%=nYear%>년  <%=nSemester%>
+							학기";
+						</script>
 	<%
    }catch(SQLException e){
       System.err.println("SQLException: " + e.getMessage());
@@ -74,7 +85,6 @@
    majorResultSet = stmt.executeQuery(majorSQL);
    if(majorResultSet.next()){
       loginMajor = majorResultSet.getString(1);   
-      System.out.println(loginMajor);
    }%>
 	<div class="tab_menu_container" align="center">
 		<br>
@@ -125,6 +135,7 @@
 			<th>시간</th>
 			<th>교수</th>
 			<th>강의실</th>
+			<th>수강인원</th>
 			<th>정원</th>
 			<th>수강신청</th>
 			<th>장바구니</th>
@@ -136,19 +147,32 @@
          if(myResultSet != null){
             while(myResultSet.next()){
                String c_id = myResultSet.getString(1);
-               System.out.println(c_id);
                int c_id_no = myResultSet.getInt(2);
                String c_name = myResultSet.getString(3);
                int c_unit = myResultSet.getInt(4);
                String c_major = myResultSet.getString(5);
-               int t_time = myResultSet.getInt(6);
-               String p_name = myResultSet.getString(7);
-               String t_loc = myResultSet.getString(8);
-               int t_max = myResultSet.getInt(9);
+               String t_id = myResultSet.getString(6);
+               int t_time = myResultSet.getInt(7);
+               String p_name = myResultSet.getString(8);
+               String t_loc = myResultSet.getString(9);
+               int t_max = myResultSet.getInt(10);
+
                if(i==3){
                   if(c_major.equals(loginMajor) || c_major.equals("교양"))  
                 	  continue;
-            }%>
+            	}
+            	
+            	nSQL = "select COUNT(*) cnt from enroll where t_id = '" + t_id + "' and e_year = ? and e_semester = ?";
+				pstmt2 = myConn.prepareStatement(nSQL);
+				pstmt2.setInt(1, nYear-2000);
+				pstmt2.setInt(2, nSemester);
+				enrollSet = pstmt2.executeQuery();
+				
+				if (enrollSet != null) {
+					while (enrollSet.next()) {
+						nEnrollStudent = enrollSet.getInt(1);
+					}
+				}%>
 		<tr>
 			<td><%=myResultSet.getString(1) %></td>
 			<td><%=c_id_no %></td>
@@ -158,6 +182,7 @@
 			<td><%=t_time %></td>
 			<td><%=p_name %></td>
 			<td><%=t_loc %></td>
+			<td><%=nEnrollStudent %></td>
 			<td><%=t_max %></td>
 			<td><a id="Wcolor"
 				href="insert_verify.jsp?c_id=<%=c_id%>&c_id_no=<%=c_id_no%>">신청</a></td>
@@ -175,29 +200,28 @@
    myConn.close();
 %>
 	<script>
-   $('.tab_box').hide();
-   $('#box_0').show();
-   $('.menu_btn').on('click', function(){
-      $('.menu_btn').removeClass('on');
-      $(this).addClass('on')
-      var idx = $('.menu_btn').index(this);
-      $('.tab_box').hide();
-      $('#box_' + idx).show();
-   });
-   /* $(function() {
-	    $('.cartHeart').click(function() {
-	    	
-	        alert($(this).text());
-	        return false;
-	    });
-	}); */
-   
-/* 	const changeText = document.querySelector("#cartHeart");
+		$('.tab_box').hide();
+		$('#box_0').show();
+		$('.menu_btn').on('click', function() {
+			$('.menu_btn').removeClass('on');
+			$(this).addClass('on')
+			var idx = $('.menu_btn').index(this);
+			$('.tab_box').hide();
+			$('#box_' + idx).show();
+		});
+		/* $(function() {
+		    $('.cartHeart').click(function() {
+		    	
+		        alert($(this).text());
+		        return false;
+		    });
+		}); */
 
-	changeText.addEventListener("click", function() {
-	  changeText.textContent = "Text has been changed!";
-	}); */
-   
-</script>
+		/* 	const changeText = document.querySelector("#cartHeart");
+
+		 changeText.addEventListener("click", function() {
+		 changeText.textContent = "Text has been changed!";
+		 }); */
+	</script>
 </body>
 </html>

@@ -4,15 +4,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="style.css" rel="stylesheet" type="text/css">
+<link href="style.css?after" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
-<title>장바구니</title>
+<title>수강신청 입력</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 
-<%@include file="user.jsp"%>
+	<%@include file="user.jsp"%>
 	<%@ include file="top.jsp"%>
 	<br>
 	<% if (session_id == null) response.sendRedirect("login.jsp"); %>
@@ -41,10 +41,9 @@
       myConn.setAutoCommit(false);
       stmt = myConn.createStatement();
       pstmt = myConn.prepareStatement //테이블 출력 pstmt
-    		  
             ("select c.c_id, c.c_id_no, c_name, c_unit, c_major, t_time, p.p_name, t_loc, t_max" 
-      + " from course c, teach t, professor p, heart h where c.c_id = t.c_id and c.c_id_no = t.c_id_no and p.p_id = t.p_id"
-      + " and t_year = ? and t_semester = ? and (t.t_id) in(select h.t_id from heart where s_id = ?) and c_major LIKE ? ORDER BY c.c_id");
+      + " from course c, teach t, professor p where c.c_id = t.c_id and c.c_id_no = t.c_id_no and p.p_id = t.p_id"
+      + " and t_year = ? and t_semester = ? and c_major LIKE ? ORDER BY c.c_id");
    }catch(ClassNotFoundException e){
       System.out.println("jdbc driver 로딩 실패");
    }catch(SQLException e){
@@ -61,7 +60,6 @@
       nYear = cstmt.getInt(1);
       nSemester = cstmt2.getInt(1);
        sem = nYear * 10 + nSemester; 
-       System.out.println(sem);
       %><script>document.getElementById('semesterInfo').innerHTML = "<%=nYear%>년  <%=nSemester%>학기";</script>
 	<%
    }catch(SQLException e){
@@ -90,37 +88,31 @@
 	<%
          String indexName = "box_" + i;%>
 	<table width="70%" align="center" class="tab_box deleteTable"
-	id="<%=indexName%>"
-		border>
-		
+		id="<%=indexName%>" border>
+
 		<%if(i == 0){
             pstmt.setInt(1, nYear-2000); 
-            System.out.println(nYear-2000+ "mmmmmmmmmmm");
             pstmt.setInt(2, nSemester);
-            pstmt.setString(3, session_id); 
-            pstmt.setString(4, "%");
+            pstmt.setString(3, "%");
          }
 		
          else if(i == 1){
              pstmt.setInt(1, nYear-2000); 
              pstmt.setInt(2, nSemester);
-            pstmt.setString(3, session_id);
-            pstmt.setString(4, loginMajor);   
+            pstmt.setString(3, loginMajor);   
 
          }
 		
          else if(i == 2){
              pstmt.setInt(1, nYear-2000); 
              pstmt.setInt(2, nSemester);
-            pstmt.setString(3, session_id); 
-            pstmt.setString(4, "교양");   
+            pstmt.setString(3, "교양");   
 
          }
          else if(i == 3){
              pstmt.setInt(1, nYear-2000); 
              pstmt.setInt(2, nSemester);
-            pstmt.setString(3, session_id);
-            pstmt.setString(4, "%");   
+            pstmt.setString(3, "%");   
          }
 			
          %>
@@ -136,9 +128,9 @@
 			<th>정원</th>
 			<th>수강신청</th>
 			<th>장바구니</th>
-			
+
 		</tr>
-		
+
 		<% myResultSet = pstmt.executeQuery();
 
          if(myResultSet != null){
@@ -157,7 +149,7 @@
                   if(c_major.equals(loginMajor) || c_major.equals("교양"))  
                 	  continue;
             }%>
-			<tr>
+		<tr>
 			<td><%=myResultSet.getString(1) %></td>
 			<td><%=c_id_no %></td>
 			<td><%=c_name %></td>
@@ -169,20 +161,13 @@
 			<td><%=t_max %></td>
 			<td><a id="Wcolor"
 				href="insert_verify.jsp?c_id=<%=c_id%>&c_id_no=<%=c_id_no%>">신청</a></td>
-		<td><a id="Wcolor"
-				href="cart_verify.jsp?c_id=<%=c_id%>&c_id_no=<%=c_id_no%>" class = "cartHeart">💚</a></td>
+			<td><a id="Wcolor"
+				href="cart_verify.jsp?c_id=<%=c_id%>&c_id_no=<%=c_id_no%>"
+				class="cartHeart">💚</a></td>
 		</tr>
 		<%}
          }%>
 	</table>
-	
-<%-- 		<br>
-	<br>
-	<div id="CountInfo" align="center" style="font-weight: bold;">
-		수강신청한 강의 수 :
-		<%=nTotalCourse%>개 &nbsp;&nbsp;&nbsp; 누적 학점 수 :
-		<%=nTotalUnit%>학점
-	</div> --%>
 	<%}%>
 	<%
    pstmt.close();
