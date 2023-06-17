@@ -165,3 +165,1199 @@ Binding(ALT+COMMAND+R,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,cocoa,system)
+!SESSION 2023-06-17 18:35:02.239 -----------------------------------------------
+eclipse.buildId=4.27.0.20230309-1200
+java.version=17.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -keyring /Users/bokyung/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -data /Users/bokyung/Documents/2023-1/데베프/최종프로젝트/Enrolment_jsp/lab -product org.eclipse.epp.package.jee.product -keyring /Users/bokyung/.eclipse_keyring
+
+!ENTRY ch.qos.logback.classic 1 0 2023-06-17 18:35:03.935
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2023-06-17 18:35:05.432
+!MESSAGE Logback config file: /Users/bokyung/Documents/2023-1/데베프/최종프로젝트/Enrolment_jsp/lab/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.1.100.20230106-1511.xml
+
+!ENTRY org.eclipse.jface 2 0 2023-06-17 18:35:08.665
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-06-17 18:35:08.665
+!MESSAGE A conflict occurred for COMMAND+SHIFT+T:
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-06-17 18:35:08.665
+!MESSAGE A conflict occurred for ALT+COMMAND+R:
+Binding(ALT+COMMAND+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.ui.edit.rename"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+Binding(ALT+COMMAND+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.edit.text.java.rename.element"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+
+!ENTRY org.eclipse.core.resources 4 568 2023-06-17 18:40:13.481
+!MESSAGE Could not write metadata for '/Servers'.
+!STACK 0
+java.io.FileNotFoundException: /Users/bokyung/Documents/2023-1/데베프/최종프로젝트/Enrolment_jsp/lab/.metadata/.plugins/org.eclipse.core.resources/.projects/Servers/.markers.snap (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:293)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:235)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:155)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:48)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:44)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1819)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1900)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1208)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1149)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:51:41.695
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/e4/snapshots/org.eclipse.e4.ui/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:51:42.905
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/updates, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:51:45.241
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/updates/release, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:51:46.394
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/release/1.2.2/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:51:47.581
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/release/1.2.1, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:51:48.764
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/release/1.2.0, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:51:49.942
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/release/1.1.0, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:51:51.115
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/updates/milestone, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:51:52.233
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S911-1.2-RC1, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:51:53.389
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S909-1.2-RC1, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:51:54.539
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S908-1.2-RC1, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:51:55.683
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S20210519-025928-1.2.2-M1/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:51:56.857
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S20210406-153234/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:51:58.030
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S20191129-202804-1.2.1-RC2, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:51:59.192
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S20191118-183434-1.2.1-RC1, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:00.346
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S20170529-101518-1.1-RC2, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:01.475
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S20170525-115740-1.1-RC2, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:02.613
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S20170523-143239-1.1-RC1, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:03.761
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S20170516-113326-1.1-M7, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:04.885
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/updates/nightly, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:08.286
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/nightly/N20230617-034207/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:10.621
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/nightly/N20230616-034202/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:11.778
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/nightly/N20230615-034141/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:12.933
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/nightly/N20230614-034138/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:14.099
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/nightly/N20230613-034151/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:20.900
+!MESSAGE Using unsafe http transport to retrieve http://dl.bintray.com/testng-team/testng-p2-release/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:23.345
+!MESSAGE Using unsafe http transport to retrieve http://dl.bintray.com/testng-team/testng-p2-release/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:24.361
+!MESSAGE Using unsafe http transport to retrieve http://dl.bintray.com/testng-team/testng-p2-release/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2023-06-17 18:52:28.139
+!MESSAGE No repository found at http://dl.bintray.com/testng-team/testng-p2-release/.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:29.377
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/oomph/uss/updates/latest, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:30.484
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/oomph/uss/drops/nightly/N20180202-232207, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:32.011
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:33.753
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/6.11.0, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:34.232
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/updatesites/6.11.0.r201704240320, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:34.351
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/6.12.0, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:34.639
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/updatesites/6.12.0.r201709030044, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:34.986
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/6.13.1, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:35.179
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/updatesites/6.13.1.r201712040202, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:35.278
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/updatesites/6.13.1.r201712040515, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:35.603
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/6.14.2, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:36.090
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/updatesites/6.14.2.r201802161450, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:36.369
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/6.14.3, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:36.539
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/updatesites/6.14.3.r201802240500, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:36.636
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/7.0.0, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:36.874
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/updatesites/7.0.0.r201908191551, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:37.165
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/7.1.0, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:37.325
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/updatesites/7.1.0.r202001120626, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:37.408
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/7.2.0, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:37.567
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/updatesites/7.2.0.r202003151902, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:37.831
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/7.3.0, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:38.295
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/updatesites/7.3.0.r202008060316, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:38.428
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/7.4.0, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:38.589
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/updatesites/7.4.0.r202105021533, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:38.674
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/7.5.0, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:39.007
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/updatesites/7.5.0.r202201070709, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:39.251
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/7.6.1, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:39.441
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/updatesites/7.6.1.r202207070546, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:39.536
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/7.7.0, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:39.713
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/updatesites/7.7.0.r202306070455, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:39.802
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/7.7.1, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:39.984
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/updatesites/7.7.1.r202305281608, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:40.077
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/7.8.0, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:40.395
+!MESSAGE Using unsafe http transport to retrieve http://testng.org/testng-p2-update-site/updatesites/7.8.0.r202306071539, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:43.016
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/technology/m2e/releases/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:45.272
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/technology/m2e/releases/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:46.391
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/technology/m2e/releases/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2023-06-17 18:52:49.798
+!MESSAGE No repository found at http://download.eclipse.org/technology/m2e/releases/.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:52:57.675
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/12.2.1.9/photon/repository/dependencies/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:04.935
+!MESSAGE Using unsafe http transport to retrieve http://dl.bintray.com/testng-team/testng-p2-release/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:07.422
+!MESSAGE Using unsafe http transport to retrieve http://dl.bintray.com/testng-team/testng-p2-release/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:08.639
+!MESSAGE Using unsafe http transport to retrieve http://dl.bintray.com/testng-team/testng-p2-release/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:13.717
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/technology/m2e/releases/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:16.016
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/technology/m2e/releases/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:17.126
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/technology/m2e/releases/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:29.829
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/e4/snapshots/org.eclipse.e4.ui/artifacts.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:34.184
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/updates, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:36.455
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/updates/release, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:37.574
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/release/1.2.2/artifacts.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:38.701
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/release/1.2.1, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:39.868
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/release/1.2.0, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:41.005
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/release/1.1.0, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:42.141
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/updates/milestone, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:43.272
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S911-1.2-RC1, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:44.405
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S909-1.2-RC1, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:45.540
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S908-1.2-RC1, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:46.679
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S20210519-025928-1.2.2-M1/artifacts.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:47.830
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S20210406-153234/artifacts.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:48.977
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S20191129-202804-1.2.1-RC2, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:50.097
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S20191118-183434-1.2.1-RC1, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:51.229
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S20170529-101518-1.1-RC2, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:52.355
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S20170525-115740-1.1-RC2, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:53.475
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S20170523-143239-1.1-RC1, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:54.612
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/milestone/S20170516-113326-1.1-M7, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:55.771
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/updates/nightly, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:53:58.066
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/nightly/N20230617-034207/artifacts.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:54:00.328
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/nightly/N20230616-034202/artifacts.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:54:01.476
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/nightly/N20230615-034141/artifacts.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:54:02.614
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/nightly/N20230614-034138/artifacts.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:54:03.725
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/usssdk/drops/nightly/N20230613-034151/artifacts.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:54:07.362
+!MESSAGE Using unsafe http transport to retrieve http://download.oracle.com/otn_software/oepe/12.2.1.9/photon/repository/dependencies/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:54:11.547
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/oomph/uss/updates/latest, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2023-06-17 18:54:12.663
+!MESSAGE Using unsafe http transport to retrieve http://download.eclipse.org/oomph/uss/drops/nightly/N20180202-232207, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2023-06-17 18:58:55.581
+!MESSAGE Error creating JDBC Connection connection to New Oracle. (Error: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=BO93r7fIShSSt55BHxx6JQ==))
+!STACK 0
+java.sql.SQLRecoverableException: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=BO93r7fIShSSt55BHxx6JQ==)
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:893)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:698)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1048)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:733)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:649)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection (CONNECTION_ID=BO93r7fIShSSt55BHxx6JQ==)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:716)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:629)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:965)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:351)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:2442)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:657)
+	... 14 more
+Caused by: java.io.IOException: Connection refused, socket connect lapse 0 ms. localhost 1521  0 (2/2) true
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:426)
+	at oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:308)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:270)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:231)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1015)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:674)
+	... 19 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:586)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at java.base/java.nio.channels.SocketChannel.open(SocketChannel.java:285)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:385)
+	... 24 more
+
+!ENTRY org.eclipse.datatools.connectivity 4 -1 2023-06-17 18:58:55.585
+!MESSAGE Could not connect to New Oracle.
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2023-06-17 18:58:55.585
+!MESSAGE Error creating SQL Model Connection connection to New Oracle. (Error: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=qaV82a61Twyw3kBgCPwPrA==))
+!STACK 0
+java.sql.SQLRecoverableException: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=qaV82a61Twyw3kBgCPwPrA==)
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:893)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:698)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1048)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:733)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:649)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection (CONNECTION_ID=qaV82a61Twyw3kBgCPwPrA==)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:716)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:629)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:965)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:351)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:2442)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:657)
+	... 20 more
+Caused by: java.io.IOException: Connection refused, socket connect lapse 0 ms. localhost 1521  0 (2/2) true
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:426)
+	at oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:308)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:270)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:231)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1015)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:674)
+	... 25 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:586)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at java.base/java.nio.channels.SocketChannel.open(SocketChannel.java:285)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:385)
+	... 30 more
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2023-06-17 18:58:55.585
+!MESSAGE Error creating JDBC Connection connection to New Oracle. (Error: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=BO93r7fIShSSt55BHxx6JQ==))
+!STACK 0
+java.sql.SQLRecoverableException: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=BO93r7fIShSSt55BHxx6JQ==)
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:893)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:698)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1048)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:733)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:649)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection (CONNECTION_ID=BO93r7fIShSSt55BHxx6JQ==)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:716)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:629)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:965)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:351)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:2442)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:657)
+	... 14 more
+Caused by: java.io.IOException: Connection refused, socket connect lapse 0 ms. localhost 1521  0 (2/2) true
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:426)
+	at oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:308)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:270)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:231)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1015)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:674)
+	... 19 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:586)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at java.base/java.nio.channels.SocketChannel.open(SocketChannel.java:285)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:385)
+	... 24 more
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2023-06-17 18:58:55.586
+!MESSAGE Error creating SQL Model Connection connection to New Oracle. (Error: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=qaV82a61Twyw3kBgCPwPrA==))
+!STACK 0
+java.sql.SQLRecoverableException: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=qaV82a61Twyw3kBgCPwPrA==)
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:893)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:698)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1048)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:733)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:649)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection (CONNECTION_ID=qaV82a61Twyw3kBgCPwPrA==)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:716)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:629)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:965)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:351)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:2442)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:657)
+	... 20 more
+Caused by: java.io.IOException: Connection refused, socket connect lapse 0 ms. localhost 1521  0 (2/2) true
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:426)
+	at oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:308)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:270)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:231)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1015)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:674)
+	... 25 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:586)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at java.base/java.nio.channels.SocketChannel.open(SocketChannel.java:285)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:385)
+	... 30 more
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2023-06-17 18:59:31.671
+!MESSAGE Error creating JDBC Connection connection to New Oracle. (Error: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=NF7CYds6Sj2d8tpiNpJAqw==))
+!STACK 0
+java.sql.SQLRecoverableException: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=NF7CYds6Sj2d8tpiNpJAqw==)
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:893)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:698)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1048)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:733)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:649)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection (CONNECTION_ID=NF7CYds6Sj2d8tpiNpJAqw==)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:716)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:629)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:965)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:351)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:2442)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:657)
+	... 14 more
+Caused by: java.io.IOException: Connection refused, socket connect lapse 0 ms. localhost 1521  0 (2/2) true
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:426)
+	at oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:308)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:270)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:231)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1015)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:674)
+	... 19 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:586)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at java.base/java.nio.channels.SocketChannel.open(SocketChannel.java:285)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:385)
+	... 24 more
+
+!ENTRY org.eclipse.datatools.connectivity 4 -1 2023-06-17 18:59:31.675
+!MESSAGE Could not connect to New Oracle.
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2023-06-17 18:59:31.675
+!MESSAGE Error creating SQL Model Connection connection to New Oracle. (Error: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=LKrnx3mxQJuLodBdl+Nw3Q==))
+!STACK 0
+java.sql.SQLRecoverableException: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=LKrnx3mxQJuLodBdl+Nw3Q==)
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:893)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:698)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1048)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:733)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:649)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection (CONNECTION_ID=LKrnx3mxQJuLodBdl+Nw3Q==)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:716)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:629)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:965)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:351)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:2442)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:657)
+	... 20 more
+Caused by: java.io.IOException: Connection refused, socket connect lapse 0 ms. localhost 1521  0 (2/2) true
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:426)
+	at oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:308)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:270)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:231)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1015)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:674)
+	... 25 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:586)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at java.base/java.nio.channels.SocketChannel.open(SocketChannel.java:285)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:385)
+	... 30 more
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2023-06-17 18:59:31.676
+!MESSAGE Error creating JDBC Connection connection to New Oracle. (Error: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=NF7CYds6Sj2d8tpiNpJAqw==))
+!STACK 0
+java.sql.SQLRecoverableException: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=NF7CYds6Sj2d8tpiNpJAqw==)
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:893)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:698)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1048)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:733)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:649)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection (CONNECTION_ID=NF7CYds6Sj2d8tpiNpJAqw==)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:716)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:629)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:965)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:351)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:2442)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:657)
+	... 14 more
+Caused by: java.io.IOException: Connection refused, socket connect lapse 0 ms. localhost 1521  0 (2/2) true
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:426)
+	at oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:308)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:270)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:231)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1015)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:674)
+	... 19 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:586)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at java.base/java.nio.channels.SocketChannel.open(SocketChannel.java:285)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:385)
+	... 24 more
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2023-06-17 18:59:31.677
+!MESSAGE Error creating SQL Model Connection connection to New Oracle. (Error: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=LKrnx3mxQJuLodBdl+Nw3Q==))
+!STACK 0
+java.sql.SQLRecoverableException: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=LKrnx3mxQJuLodBdl+Nw3Q==)
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:893)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:698)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1048)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:733)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:649)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection (CONNECTION_ID=LKrnx3mxQJuLodBdl+Nw3Q==)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:716)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:629)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:965)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:351)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:2442)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:657)
+	... 20 more
+Caused by: java.io.IOException: Connection refused, socket connect lapse 0 ms. localhost 1521  0 (2/2) true
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:426)
+	at oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:308)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:270)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:231)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1015)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:674)
+	... 25 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:586)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at java.base/java.nio.channels.SocketChannel.open(SocketChannel.java:285)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:385)
+	... 30 more
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2023-06-17 19:00:37.776
+!MESSAGE Error creating JDBC Connection connection to New Oracle. (Error: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=XjT1EGXfS6+EJ40Sp77btQ==))
+!STACK 0
+java.sql.SQLRecoverableException: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=XjT1EGXfS6+EJ40Sp77btQ==)
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:893)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:698)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1048)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:733)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:649)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection (CONNECTION_ID=XjT1EGXfS6+EJ40Sp77btQ==)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:716)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:629)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:965)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:351)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:2442)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:657)
+	... 14 more
+Caused by: java.io.IOException: Connection refused, socket connect lapse 0 ms. localhost 1521  0 (2/2) true
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:426)
+	at oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:308)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:270)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:231)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1015)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:674)
+	... 19 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:586)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at java.base/java.nio.channels.SocketChannel.open(SocketChannel.java:285)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:385)
+	... 24 more
+
+!ENTRY org.eclipse.datatools.connectivity 4 -1 2023-06-17 19:00:37.781
+!MESSAGE Could not connect to New Oracle.
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2023-06-17 19:00:37.782
+!MESSAGE Error creating SQL Model Connection connection to New Oracle. (Error: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=HWhYl3QxRn+aeh6R4s2HkA==))
+!STACK 0
+java.sql.SQLRecoverableException: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=HWhYl3QxRn+aeh6R4s2HkA==)
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:893)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:698)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1048)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:733)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:649)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection (CONNECTION_ID=HWhYl3QxRn+aeh6R4s2HkA==)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:716)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:629)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:965)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:351)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:2442)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:657)
+	... 20 more
+Caused by: java.io.IOException: Connection refused, socket connect lapse 0 ms. localhost 1521  0 (2/2) true
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:426)
+	at oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:308)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:270)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:231)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1015)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:674)
+	... 25 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:586)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at java.base/java.nio.channels.SocketChannel.open(SocketChannel.java:285)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:385)
+	... 30 more
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2023-06-17 19:00:37.782
+!MESSAGE Error creating JDBC Connection connection to New Oracle. (Error: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=XjT1EGXfS6+EJ40Sp77btQ==))
+!STACK 0
+java.sql.SQLRecoverableException: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=XjT1EGXfS6+EJ40Sp77btQ==)
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:893)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:698)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1048)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:733)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:649)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection (CONNECTION_ID=XjT1EGXfS6+EJ40Sp77btQ==)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:716)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:629)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:965)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:351)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:2442)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:657)
+	... 14 more
+Caused by: java.io.IOException: Connection refused, socket connect lapse 0 ms. localhost 1521  0 (2/2) true
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:426)
+	at oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:308)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:270)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:231)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1015)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:674)
+	... 19 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:586)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at java.base/java.nio.channels.SocketChannel.open(SocketChannel.java:285)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:385)
+	... 24 more
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2023-06-17 19:00:37.783
+!MESSAGE Error creating SQL Model Connection connection to New Oracle. (Error: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=HWhYl3QxRn+aeh6R4s2HkA==))
+!STACK 0
+java.sql.SQLRecoverableException: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=HWhYl3QxRn+aeh6R4s2HkA==)
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:893)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:698)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1048)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:733)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:649)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection (CONNECTION_ID=HWhYl3QxRn+aeh6R4s2HkA==)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:716)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:629)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:965)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:351)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:2442)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:657)
+	... 20 more
+Caused by: java.io.IOException: Connection refused, socket connect lapse 0 ms. localhost 1521  0 (2/2) true
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:426)
+	at oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:308)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:270)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:231)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1015)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:674)
+	... 25 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:586)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at java.base/java.nio.channels.SocketChannel.open(SocketChannel.java:285)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:385)
+	... 30 more
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2023-06-17 19:00:57.047
+!MESSAGE Error creating JDBC Connection connection to New Oracle. (Error: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=B0YtXC3gSwKv8umnYPMwXw==))
+!STACK 0
+java.sql.SQLRecoverableException: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=B0YtXC3gSwKv8umnYPMwXw==)
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:893)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:698)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1048)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:733)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:649)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection (CONNECTION_ID=B0YtXC3gSwKv8umnYPMwXw==)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:716)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:629)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:965)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:351)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:2442)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:657)
+	... 14 more
+Caused by: java.io.IOException: Connection refused, socket connect lapse 0 ms. localhost 1521  0 (2/2) true
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:426)
+	at oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:308)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:270)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:231)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1015)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:674)
+	... 19 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:586)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at java.base/java.nio.channels.SocketChannel.open(SocketChannel.java:285)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:385)
+	... 24 more
+
+!ENTRY org.eclipse.datatools.connectivity 4 -1 2023-06-17 19:00:57.051
+!MESSAGE Could not connect to New Oracle.
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2023-06-17 19:00:57.051
+!MESSAGE Error creating SQL Model Connection connection to New Oracle. (Error: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=S7t0Ts0JShGlvEUUXzCIWw==))
+!STACK 0
+java.sql.SQLRecoverableException: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=S7t0Ts0JShGlvEUUXzCIWw==)
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:893)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:698)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1048)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:733)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:649)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection (CONNECTION_ID=S7t0Ts0JShGlvEUUXzCIWw==)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:716)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:629)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:965)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:351)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:2442)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:657)
+	... 20 more
+Caused by: java.io.IOException: Connection refused, socket connect lapse 1 ms. localhost 1521  0 (2/2) true
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:426)
+	at oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:308)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:270)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:231)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1015)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:674)
+	... 25 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:586)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at java.base/java.nio.channels.SocketChannel.open(SocketChannel.java:285)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:385)
+	... 30 more
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2023-06-17 19:00:57.052
+!MESSAGE Error creating JDBC Connection connection to New Oracle. (Error: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=B0YtXC3gSwKv8umnYPMwXw==))
+!STACK 0
+java.sql.SQLRecoverableException: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=B0YtXC3gSwKv8umnYPMwXw==)
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:893)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:698)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1048)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:733)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:649)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection (CONNECTION_ID=B0YtXC3gSwKv8umnYPMwXw==)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:716)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:629)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:965)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:351)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:2442)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:657)
+	... 14 more
+Caused by: java.io.IOException: Connection refused, socket connect lapse 0 ms. localhost 1521  0 (2/2) true
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:426)
+	at oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:308)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:270)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:231)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1015)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:674)
+	... 19 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:586)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at java.base/java.nio.channels.SocketChannel.open(SocketChannel.java:285)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:385)
+	... 24 more
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2023-06-17 19:00:57.052
+!MESSAGE Error creating SQL Model Connection connection to New Oracle. (Error: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=S7t0Ts0JShGlvEUUXzCIWw==))
+!STACK 0
+java.sql.SQLRecoverableException: IO 오류: The Network Adapter could not establish the connection (CONNECTION_ID=S7t0Ts0JShGlvEUUXzCIWw==)
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:893)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:698)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1048)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:733)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:649)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:328)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.oracle.JDBCOracleConnectionFactory.createConnection(JDBCOracleConnectionFactory.java:27)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection (CONNECTION_ID=S7t0Ts0JShGlvEUUXzCIWw==)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:716)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:629)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:965)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:351)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:2442)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:657)
+	... 20 more
+Caused by: java.io.IOException: Connection refused, socket connect lapse 1 ms. localhost 1521  0 (2/2) true
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:426)
+	at oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:308)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:270)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:231)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:1015)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:674)
+	... 25 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:586)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at java.base/java.nio.channels.SocketChannel.open(SocketChannel.java:285)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:385)
+	... 30 more
+
+!ENTRY org.eclipse.core.resources 4 568 2023-06-17 19:03:45.776
+!MESSAGE Could not write metadata for '/Servers'.
+!STACK 0
+java.io.FileNotFoundException: /Users/bokyung/Documents/2023-1/데베프/최종프로젝트/Enrolment_jsp/lab/.metadata/.plugins/org.eclipse.core.resources/.projects/Servers/.markers.snap (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:293)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:235)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:155)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:48)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:44)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1819)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1900)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1208)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1149)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
